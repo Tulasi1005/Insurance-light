@@ -217,7 +217,7 @@ function injectCookieBanner() {
         <h4 style="margin-bottom: 8px;"><i class="fas fa-cookie-bite"></i> Cookie Consent</h4>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;">We use cookies to improve your experience on our site. By using our site, you consent to cookies. Please read our Cookie Policy.</p>
         <div class="cookie-actions">
-            <button class="btn btn-outline btn-sm" id="cookie-settings-btn" onclick="alert('Cookie Settings details (Dummy).')">Preferences</button>
+            // <button class="btn btn-outline btn-sm" id="cookie-settings-btn" onclick="alert('Cookie Settings details (Dummy).')">Preferences</button>
             <button class="btn btn-primary btn-sm" id="cookie-accept-btn">Accept All</button>
         </div>
     `;

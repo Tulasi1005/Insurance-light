@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Team - Quintera</title>
+    <meta name="description" content="Meet the executive leadership team of Quintera, dedicated to delivering an amazing general insurance experience.">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Main Style Guide -->
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .team-banner {
+            width: 100%;
+            height: 380px;
+            background: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            border-bottom: 4px solid #0b132b;
+        }
+        .team-heading {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-top: 40px;
+            margin-bottom: 8px;
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase;
+        }
+        .team-text {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            row-gap: 40px;
+            column-gap: 32px;
+        }
+        @media (max-width: 992px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .manager-card {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            box-shadow: none;
+            text-align: left;
+        }
+        .manager-img {
+            width: 100%;
+            aspect-ratio: 1/1; /* Square */
+            border: 1px solid #cbd5e1;
+            background-color: var(--primary-light);
+            padding: 6px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        .manager-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .manager-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+        .manager-role {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-light); /* Red color matching screenshot */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section (Dynamic Injection) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Full-Width Team Group Banner -->
+    <div class="team-banner"></div>
+
+    <!-- Main Content Container -->
+    <section class="section-padding" style="background-color: var(--primary-color); padding-top: 20px;">
+        <div class="container">
+            <h1 class="team-heading">Our Management Team</h1>
+            <p class="team-text">
+                Quintera commits to delivering an amazing experience that is based in our values of Honesty, Integrity & Trust. Our leadership team, as supported by our wider staff take the time to research, strategize and develop company plans to deliver on promises made to each and every one of our clients.
+            </p>
+
+            <!-- Management Team Grid (4 Columns) -->
+            <div class="grid-4">
+                
+                <!-- Row 1 -->
+                <!-- 1. Tammara Glaves-Hucey -->
+                <div class="manager-card">
+                    <div class="manager-img">
+                        <img src="./tammara_portrait.jpg" alt="Tammara Glaves-Hucey">
+                    </div>
+                    <div class="manager-name">Tammara Glaves-Hucey</div>
+                    <div class="manager-role">Managing Director</div>
+                </div>
+
+                <!-- 2. Andrea Muir Gibbs -->
+                <div class="manager-card">
+                    <div class="manager-img">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Andrea Muir Gibbs">
+                    </div>
+                    <div class="manager-name">Andrea Muir Gibbs</div>
+                    <div class="manager-role">Assistant General Manager - Personal Lines & Regional</div>
+                </div>
+
+                <!-- 3. Jordon Tait -->
+                <div class="manager-card">
+                    <div class="manager-img">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Jordon Tait">
+                    </div>
+                    <div class="manager-name">Jordon Tait</div>
+                    <div class="manager-role">Assistant General Manager - Technical and Business Support</div>
+                </div>
+
+                <!-- 4. Adrian Bailey -->
+                <div class="manager-card">
+                    <div class="manager-img">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Adrian Bailey">
+                    </div>
+                    <div class="manager-name">Adrian Bailey</div>
+                    <div class="manager-role">Business Efficiency & Support Manager</div>
+                </div>
+
+                <!-- Row 2 -->
+                <!-- 5. Orette Duncan -->
+                <div class="manager-card">
+                    <div class="manager-img">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" alt="Orette Duncan">
+                    </div>
+                    <div class="manager-name">Orette Duncan</div>
+                    <div class="manager-role">Client & Partner Services Manager</div>
+                </div>
+
+                <!-- 6. Omar Allwood -->
+                <div class="manager-card">
+                    <div class="manager-img">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Omar Allwood">
+                    </div>
+                    <div class="manager-name">Omar Allwood</div>
+                    <div class="manager-role">Broker Services Manager</div>
+                </div>
+
+                <!-- 7. Sherieka Jones -->
+                <div class="manager-card">
+                    <div class="manager-img">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Sherieka Jones">
+                    </div>
+                    <div class="manager-name">Sherieka Jones</div>
+                    <div class="manager-role">Alternative Channel Manager</div>
+                </div>
+
+                <!-- 8. Kaydene DeSilva -->
+                <div class="manager-card">
+                    <div class="manager-img">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Kaydene DeSilva">
+                    </div>
+                    <div class="manager-name">Kaydene DeSilva</div>
+                    <div class="manager-role">Human Resources Manager</div>
+                </div>
+
+                <!-- Row 3 (Offset centered columns naturally) -->
+                <!-- 9. Rachel Greenland -->
+                <div class="manager-card">
+                    <div class="manager-img">
+                        <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=400&q=80" alt="Rachel Greenland">
+                    </div>
+                    <div class="manager-name">Rachel Greenland</div>
+                    <div class="manager-role">Marketing Manager</div>
+                </div>
+
+                <!-- 10. Omar Vassel -->
+                <div class="manager-card">
+                    <div class="manager-img">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80" alt="Omar Vassel">
+                    </div>
+                    <div class="manager-name">Omar Vassel</div>
+                    <div class="manager-role">Financial Controller</div>
+                </div>
+
+                <!-- 11. Kelli-Ann Reid -->
+                <div class="manager-card">
+                    <div class="manager-img">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80" alt="Kelli-Ann Reid">
+                    </div>
+                    <div class="manager-name">Kelli-Ann Reid</div>
+                    <div class="manager-role">Claims Manager</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section (Dynamic Injection) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Layout Handler Script -->
+    <script src="./layout.js"></script>
+</body>
+</html>

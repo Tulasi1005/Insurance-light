@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - Quintera</title>
+    <meta name="description" content="Find answers to all your frequently asked queries about Motor and Home insurance coverage with Quintera.">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Main Style Guide -->
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .faq-banner {
+            width: 100%;
+            height: 380px;
+            background: url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            border-bottom: 4px solid #0b132b;
+        }
+        .faq-heading {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-top: 40px;
+            margin-bottom: 24px;
+            font-family: 'Outfit', sans-serif;
+        }
+        .faq-section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-top: 24px;
+            margin-bottom: 20px;
+            font-family: 'Outfit', sans-serif;
+        }
+        .faq-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+        .faq-icon {
+            color: var(--text-light); /* Red color matching screenshot */
+            font-size: 1.1rem;
+            margin-right: 12px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .faq-question {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .faq-answer {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            line-height: 1.6;
+            margin: 0;
+        }
+        .faq-right-img {
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+        .faq-right-img img {
+            width: 100%;
+            display: block;
+        }
+        .chat-box {
+            background-color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 4px;
+            margin-top: 40px;
+        }
+        .chat-box h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            font-family: 'Outfit', sans-serif;
+        }
+        .chat-box p {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin: 0;
+        }
+        .chat-box p a {
+            color: var(--text-light);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .chat-box p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section (Dynamic Injection) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Full-Width FAQ Banner -->
+    <div class="faq-banner"></div>
+
+    <!-- Main Content Container -->
+    <section class="section-padding" style="background-color: var(--primary-color); padding-top: 20px;">
+        <div class="container">
+            <h1 class="faq-heading">Frequently Asked Questions</h1>
+
+            <!-- Side-by-Side Content Grid -->
+            <div class="grid-3" style="grid-template-columns: 2fr 1.25fr; gap: 48px; align-items: flex-start;">
+                
+                <!-- LEFT COLUMN: Motor Vehicle Questions -->
+                <div>
+                    <h3 class="faq-section-title">Motor Vehicle Questions</h3>
+
+                    <!-- Q1 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">Why is it important to report a minor Accident?</h4>
+                            <p class="faq-answer">
+                                If you are involved in a minor accident, you may feel that you should not report it as it could cause your premium to be increased. However, failure to report an accident is a breach of the terms of the policy. If the other party chooses to claim on their insurance company who then seek repayment from us, your rights to protection under the policy may have been forfeited. It is important to report all accidents and avoid unnecessary problems.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">I have fitted a new music system to my car is it covered?</h4>
+                            <p class="faq-answer">
+                                Accessories, which were not fitted by the original manufacturer, are not automatically covered. It is therefore your responsibility to obtain proof of the value of these items and ensure that they are specifically insured.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">If I decide to sell my car can I "give" the purchaser the Insurance I bought for it?</h4>
+                            <p class="faq-answer">
+                                The Insurance contract is a personal one. This means that our decision to insure you, and the premiums you were charged was based solely on our assessment of you. You therefore cannot transfer this cover to another person, not even your child. The position is the same if you are giving the car as a gift.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">Does my policy provide a grace period?</h4>
+                            <p class="faq-answer">
+                                No. The Law specifically prohibits us from granting you a grace period. Your cover expires at midnight on the date stated on your Certificate of Insurance. Therefore, if the day after the expiration of your cover is a weekend or Public holiday you must ensure your cover is renewed early.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q5 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">I have purchased Comprehensive Cover however the top of my certificate mentions Third Party Cover. Why?</h4>
+                            <p class="faq-answer">
+                                The law, which makes motor insurance compulsory, is called the Motor Vehicle Third Party Risks Law. The reference to third party is simply acknowledging that you have satisfied the legal requirements.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q6 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">Why do I have to give the names of the persons who will drive my car when I want open cover?</h4>
+                            <p class="faq-answer">
+                                In our efforts to evaluate your risk exposure it is important for us to know the ages, driving experience, claims experience and occupations of your drivers.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q7 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">Who can drive my vehicle?</h4>
+                            <p class="faq-answer">
+                                Your Certificate of Insurance, Cover Note or Policy Schedule provides detailed information on the person(s) permitted to drive. There are, at times, limitations on the age and driving experience your drivers should have. Please look out for these. Your vehicle is a prized possession, be selective about the persons you allow to drive it. A careless driver could cause your premiums to increase.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q8 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">I wish to modify my car to boost its performance will it affect my premiums?</h4>
+                            <p class="faq-answer">
+                                If you decide to modify your car to make it more powerful or faster we need to know. Unfortunately, such modifications increases the risks associated with your car and consequently the premiums. If we are not aware it is not covered under your policy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q9 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">How can I minimize the cost of my insurance?</h4>
+                            <p class="faq-answer">
+                                1. You can agree to bear a larger percentage of each claim should any occur. 2. You could restrict the driving of your vehicle to three named persons. 3. If you insure all your vehicles with one insurer you will be entitled to a multiple discount. 4. Maintain a good driving record to maximize your No Claim Discount.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q10 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">My windscreen was recently broken. If I make a claim will it affect my no claim discount?</h4>
+                            <p class="faq-answer">
+                                Your motor policy covers breakage of your windscreen or window up to a specified amount. There must be no other damage or injury apart from scratches caused by the shattering of the glass. Once this is the case the excess is not applicable and it will not affect your no claim discount.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q11 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">How does the no claim discount work?</h4>
+                            <p class="faq-answer">
+                                This is a discount you earn for not making a claim under your policy. As long as you do not make a claim it increases annually until it reaches a maximum percentage. It is important to note that even if you are not at fault in an accident, once you have made a claim, your discount will be reduced. It will be reinstated if we recover our expenditure. Accident free driving is the best way to keep your premiums at a reasonable level. Your No Claim Discount is not transferable to another person. However, you can transfer it from one of your vehicles to another one owned.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q12 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">What is The Proposal Form?</h4>
+                            <p class="faq-answer">
+                                This form is used by Insurers to gather information about the risk to be insured. For motor insurance some of the things insurers would be interested in are the person who owns the vehicle, the vehicle itself and the drivers. This will enable them to determine whether or not to accept a risk and the premium to charge. All the questions must, therefore, be answered truthfully and any material facts should be disclosed. A material fact is any information an insurer would regard as likely to influence their assessment and acceptance of a risk.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q13 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">What is the Excess?</h4>
+                            <p class="faq-answer">
+                                The excess is a portion of a motor claim. It is the cost of repairing or replacing your vehicle, specified as a percentage of the value of the vehicle, that you are responsible for paying, whether or not you are at fault. The Company will pay amounts over and above this figure up to the sum insured. We do not apply an excess to fire claims. If you are involved in a minor accident, you may feel that you should not report it as it could cause your premium to be increased. However, failure to report an accident is a breach of the terms of the policy. If the other party chooses to claim on their insurance company who then seek repayment from us, your rights to protection under the policy may have been forfeited. It is important to report all accidents and avoid unnecessary problems.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q14 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">Why Motor Insurance?</h4>
+                            <p class="faq-answer">
+                                Under the Motor Vehicles Insurance (Third Party Risks) act of 1941, a minimum level of insurance is compulsory if you intend to operate a vehicle on the Jamaican roads. Being caught driving a vehicle that is not insured is an offence. In addition, it is your best interest to ensure that whether through someone else's fault or yours an accident or loss does not cause you financial hardship. Insuring your vehicle is a means of protecting yourself.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q15 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">What is an Insurance Policy?</h4>
+                            <p class="faq-answer">
+                                An insurance policy is a contract between you and an insurance company, in which we promise to take over the financial costs of certain risks. The policy describes the item(s) covered, the risks you are covered against and specifies your rights and responsibilities, along with the terms and limits of the cover. We cannot stop those risks from occurring, but we can help to pay for them when they do.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Image & Home Insurance Questions -->
+                <div style="border-left: 1px solid #e2e8f0; padding-left: 32px;">
+                    <div class="faq-right-img">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Customer Representative smiling">
+                    </div>
+
+                    <h3 class="faq-section-title" style="margin-top: 0;">Home Insurance Questions</h3>
+
+                    <!-- HQ1 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">What To Do In The Event Of A Loss ?</h4>
+                            <p class="faq-answer">
+                                Burglary, Housebreaking, Theft And Fire Incident. 1. Immediately report all these incidents to the police and the Fire service, in case of fire. 2. Where a crime has been committed do not tamper with any potential evidence before the arrival of the police. 3. Take photos where possible to show entry, exit and damage. 4. Contact our Claims Department or your broker representative as soon as possible. 5. List all damage / loss to building and contents. 6. Locate and secure you insurance policy and any other personal contractual documents. Losses From Major Perils – Flood, Hurricane etc. On Happening Of A Loss 1. Take photos of damage. 2. Secure premises with board, tarpaulins etc. to prevent further loss or damage to building and contents. 3. Keep all invoices and receipts for sums spent in securing the premises. 4. Contact our Claims Department or your broker representative as soon as possible for guidance. 5. Clean up debris. 6. Salvage as much as possible. Dry out electrical items, clothing etc. If necessary, use a generator to run essential electrical appliances e.g. freezers. 8. If the premises are rendered uninhabitable, seek reasonably priced temporary alternative accommodation. There is some coverage under your policy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- HQ2 -->
+                    <div class="faq-item">
+                        <i class="fas fa-info-circle faq-icon"></i>
+                        <div>
+                            <h4 class="faq-question">How Can I Make A Claim That Will Be Settled Quickly?</h4>
+                            <p class="faq-answer">
+                                1. Your first official step is to fully complete our claim form and return same to your broker representative or us, ASAP but definitely within 30 days. The forms are available from your brokers, our office or website. 2. For contents, prepare an inventory of damaged / lost items available with date of purchase, purchase price, replacement cost or repair estimate. 3. For building, have a detailed estimate from the repairer. 4. Make yourself available for the claims adjuster to survey premises and take photos etc. Allow at least one hour for this process. (Have documents ready, e.g. site plan, claim documents). 6. Ensure that all known damage is pointed out to the adjuster. 7. The adjuster will have local rate sheets for similar types of building repairs and will prepare his costing based on measurements taken by him. If his costing is in line with your estimate / claim the adjuster might request that you sign Proof of Loss Form which verifies that you accept the amount proposed to you by the adjuster as your loss. 8. The adjuster will then send their report to us and we compare your loss with the policy coverage in place. 9. Should your loss be covered under the policy we will issue settlement cheque and final policy discharge form within 5 days (in extreme situations may be longer). Info required about Damaged items: 1. Item 2. Description 3. Year Purchased 4. Original Cost 5. Replacement / repair cost Our claims team is always available to guide you in the most efficient way to recover from your loss and get back to the position you were prior to the incident.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Didn't find answer block -->
+                    <div class="chat-box">
+                        <h4>Didn't find the answer you are looking for?</h4>
+                        <p>Ask Our ChatBot or Chat with our customer support representatives via <a href="#">Live Chat</a>.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section (Dynamic Injection) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Layout Handler Script -->
+    <script src="./layout.js"></script>
+</body>
+</html>

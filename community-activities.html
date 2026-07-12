@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Activities - Quintera</title>
+    <meta name="description" content="Explore Quintera's corporate social responsibility initiatives, foundation supports, and recent community upliftment projects.">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Main Style Guide -->
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .community-banner {
+            width: 100%;
+            height: 380px;
+            background: url('https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            border-bottom: 4px solid #0b132b;
+        }
+        .comm-heading {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-top: 40px;
+            margin-bottom: 24px;
+            font-family: 'Outfit', sans-serif;
+        }
+        .comm-subheading {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-family: 'Outfit', sans-serif;
+        }
+        .comm-text {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .comm-link-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 24px;
+        }
+        .comm-link-list li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .comm-link-list li a {
+            color: var(--text-light); /* Red color matching screenshot */
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .comm-link-list li a:hover {
+            text-decoration: underline;
+        }
+        .comm-left-img {
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+        .comm-left-img img {
+            width: 100%;
+            display: block;
+        }
+        .comm-right-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 600px) {
+            .comm-right-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .activity-card {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+        }
+        .activity-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-light); /* Red title matching screenshot */
+            margin-bottom: 12px;
+            line-height: 1.4;
+            text-decoration: none;
+            display: block;
+        }
+        .activity-title:hover {
+            text-decoration: underline;
+        }
+        .activity-img {
+            width: 100%;
+            height: 180px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: auto;
+            margin-bottom: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+        .activity-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .activity-label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-light); /* Red label matching screenshot */
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section (Dynamic Injection) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Full-Width Community Volunteers Banner -->
+    <div class="community-banner"></div>
+
+    <!-- Main Content Container -->
+    <section class="section-padding" style="background-color: var(--primary-color); padding-top: 20px;">
+        <div class="container">
+            <h1 class="comm-heading">Community Activities</h1>
+
+            <!-- Side-by-Side Content Grid -->
+            <div class="grid-3" style="grid-template-columns: 1.25fr 2fr; gap: 48px; align-items: flex-start;">
+                
+                <!-- LEFT COLUMN -->
+                <div>
+                    <div class="comm-left-img">
+                        <img src="https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&w=400&q=80" alt="Volunteer painting wall">
+                    </div>
+                    <p class="comm-text">
+                        Service to the community, especially those in which we operate, form part of the core values of Quintera (Quintera). As such, finding ways to give back and providing support to those in need remains top priority for our company.
+                    </p>
+
+                    <h4 class="comm-subheading" style="margin-top: 30px;">Star’s Foundations</h4>
+                    <ul class="comm-link-list">
+                        <li><a href="#">• Quintera Foundation</a></li>
+                        <li><a href="#">• Star & Staff Community Development Foundation</a></li>
+                    </ul>
+                </div>
+
+                <!-- RIGHT COLUMN (Recent Activities) -->
+                <div style="border-left: 1px solid #e2e8f0; padding-left: 32px;">
+                    <h3 class="comm-subheading" style="margin-top: 0; margin-bottom: 24px;">Recent Activities</h3>
+
+                    <div class="comm-right-grid">
+                        
+                        <!-- Activity 1 -->
+                        <div class="activity-card">
+                            <a href="#" class="activity-title">
+                                Quintera Combats Food Poverty with Star Campus Connect Food Bank – July 5, 2026
+                            </a>
+                            <p class="comm-text" style="font-size: 0.85rem; margin-bottom: 16px;">
+                                Quintera & Star Campus Connect Food Bank Showing up for communities in need remains top priority for us at Quintera. This is why, with each new policy, Quintera contributes $200 JMD towards the Star Campus Connect Food Bank, supporting [...]
+                            </p>
+                            <div class="activity-img">
+                                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400&q=80" alt="Volunteers packing food crates">
+                            </div>
+                            <div class="activity-label">Calabar Primary & Junior High</div>
+                        </div>
+
+                        <!-- Activity 2 -->
+                        <div class="activity-card">
+                            <a href="#" class="activity-title">
+                                Uplifting End Time Basic School on Labour Day – May 23, 2026
+                            </a>
+                            <p class="comm-text" style="font-size: 0.85rem; margin-bottom: 16px;">
+                                STAR GENERAL INSURANCE, STAR CAPITAL MANAGEMENT AND STAR & STAFF UPLIFT END TIME BASIC SCHOOL FOR ECI CERTIFICATION Quintera (Quintera), Star Capital Management and Star & Staff Management Foundation Labour Day Project staged on Tuesday at the End [...]
+                            </p>
+                            <div class="activity-img">
+                                <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=400&q=80" alt="Volunteer carrying plant pots">
+                            </div>
+                            <div class="activity-label">Salvation Army Rae Town Basic School</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section (Dynamic Injection) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Layout Handler Script -->
+    <script src="./layout.js"></script>
+</body>
+</html>

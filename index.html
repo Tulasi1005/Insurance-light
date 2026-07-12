@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Quintera</title>
+    <meta name="description" content="Quintera - Vision, Integrity, Impact. Providing personal lines, commercial coverage, real estate, policy management, and risk assessment services.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Banner/Slider Styles */
+        .slider-section {
+            position: relative;
+            height: 500px;
+            background-color: var(--primary-color);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide-content {
+            text-align: center;
+            color: white;
+            z-index: 5;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        .slide-content h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .slide-content p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Announcement Alert Bar */
+        .announcement-bar {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            text-align: center;
+            padding: 12px 0;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        .announcement-bar a {
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Hero / Slider Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .slider-section {
+                height: 400px;
+            }
+            .slide-content h2 {
+                font-size: 1rem !important;
+                letter-spacing: 2px !important;
+            }
+            .slide-content h1 {
+                font-size: 2.2rem !important;
+                margin-bottom: 12px !important;
+            }
+            .slide-content p {
+                font-size: 0.95rem !important;
+                margin-bottom: 20px !important;
+            }
+        }
+
+        /* Specific Roadside Assistance Box formatting */
+        .roadside-assistance-box {
+            background-color: var(--primary-light);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .roadside-text-top {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 24px;
+            line-height: 1.6;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .roadside-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        .roadside-btn-red {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 14px 28px;
+            border-radius: 4px;
+            box-shadow: var(--shadow-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            max-width: 280px;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .roadside-btn-red:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .roadside-text-bottom {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section (Dynamic Injection) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Announcement Alert Bar -->
+    <div class="announcement-bar">
+        <a href="./contact-us.html"><i class="fas fa-bullhorn"></i> Contact an Advisor at Quintera Today!</a>
+    </div>
+
+    <!-- Hero / Slider Section -->
+    <section class="slider-section" style="background-image: linear-gradient(rgba(11,19,43,0.85), rgba(11,19,43,0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center;">
+        <div class="slide-content">
+            <h2 style="font-size: 1.5rem; letter-spacing: 4px; color: var(--secondary-color); margin-bottom: 8px;">Vision • Integrity • Impact</h2>
+            <h1 style="font-size: 3.5rem; font-weight: 800; color: white; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">QUINTERA HOLDINGS</h1>
+            <p>Providing professional insurance coverage, policy management, risk assessment, and commercial/residential real estate advisory services tailored to your needs.</p>
+            <a href="./contact-us.html" class="btn btn-secondary" style="padding: 14px 35px; font-size: 1rem; font-weight: 700;">Connect With Advisor</a>
+        </div>
+    </section>
+
+    <!-- Specific Corporate Contact Banner -->
+    <section class="roadside-assistance-box">
+        <div class="container">
+            <div class="roadside-text-top">
+                Are you a client or policyholder needing claims assistance, coverage evaluation, or real estate advisory?
+            </div>
+            <div class="roadside-buttons">
+                <a href="tel:980-776-5292" class="roadside-btn-red">
+                    <i class="fas fa-phone-alt"></i> CALL 980-776-5292
+                </a>
+                <a href="mailto:sales@quintera.us" class="roadside-btn-red">
+                    <i class="fas fa-envelope"></i> EMAIL ADVISOR
+                </a>
+            </div>
+            <div class="roadside-text-bottom">
+                Speak directly to our Quintera Advisory Desk
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Grid Section -->
+    <section class="section-padding" style="background-color: var(--primary-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 40px;">
+                <p style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary-color); margin-bottom: 8px;">Advisory Portfolio</p>
+                <h2 style="font-size: 2.2rem; font-weight: 700; color: var(--text-light);">Our Core Services</h2>
+            </div>
+
+            <!-- Grid of 5 Quintera Services Cards -->
+            <div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;">
+                <!-- Card 1: Personal Lines -->
+                <div class="home-card">
+                    <div class="home-card-body">
+                        <div class="home-card-img">
+                            <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=400&q=80" alt="Personal Lines">
+                        </div>
+                        <h3>Personal Lines Coverage</h3>
+                        <p>Tailored homeowners, renters, auto, boat, and personal umbrella insurance plans designed to protect your personal assets.</p>
+                    </div>
+                    <a href="./contact-us.html?service=Personal%20Lines%20Coverage" class="btn-card-red" style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Request Quote</a>
+                </div>
+
+                <!-- Card 2: Commercial Coverage -->
+                <div class="home-card">
+                    <div class="home-card-body">
+                        <div class="home-card-img">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Commercial Coverage">
+                        </div>
+                        <h3>Commercial Coverage</h3>
+                        <p>Protect your business with workers' compensation, commercial properties, General liability, and fleet auto lines.</p>
+                    </div>
+                    <a href="./contact-us.html?service=Commercial%20Coverage" class="btn-card-red" style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Request Quote</a>
+                </div>
+
+                <!-- Card 3: Real Estate Services -->
+                <div class="home-card">
+                    <div class="home-card-body">
+                        <div class="home-card-img">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80" alt="Real Estate Services">
+                        </div>
+                        <h3>Real Estate Services</h3>
+                        <p>Residential purchase/sales brokerage, commercial property representation, and professional tenant leasing services.</p>
+                    </div>
+                    <a href="./contact-us.html?service=Residential%20and%20Commercial%20Real%20Estate%20Services" class="btn-card-red" style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Consult Advisor</a>
+                </div>
+
+                <!-- Card 4: Policy Management -->
+                <div class="home-card" style="grid-column: span 1;">
+                    <div class="home-card-body">
+                        <div class="home-card-img">
+                            <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80" alt="Policy Management">
+                        </div>
+                        <h3>Policy Management</h3>
+                        <p>Handling all policy details, updates, claims assistance, and renewals to provide continuous protection and peace of mind.</p>
+                    </div>
+                    <a href="./contact-us.html?service=Policy%20Management" class="btn-card-red" style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Request Service</a>
+                </div>
+
+                <!-- Card 5: Risk Assessment -->
+                <div class="home-card" style="grid-column: span 1;">
+                    <div class="home-card-body">
+                        <div class="home-card-img">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80" alt="Risk Assessment">
+                        </div>
+                        <h3>Risk Assessment</h3>
+                        <p>Evaluate your risk exposure, recommend policy limits, and customize umbrella coverage matching your unique situation.</p>
+                    </div>
+                    <a href="./contact-us.html?service=Risk%20Assessment" class="btn-card-red" style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Request Evaluation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MD Message Section -->
+    <section class="upgrade-section">
+        <div class="container-fluid">
+            <div class="upgrade-row">
+                <div class="upgrade-image-col">
+                    <img src="./tammara_portrait.jpg" alt="Tammara Glaves-Hucey">
+                </div>
+                <div class="upgrade-content-col">
+                    <h2>Upgrade your insurance advisory experience with Quintera</h2>
+                    <p class="upgrade-quote">
+                        "At Quintera, our values as a team are aligned to making you, our valued clients, not only happy but have an amazing advisory experience." - Tammara Glaves-Hucey, Managing Director, Quintera
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slanted Divider -->
+    <div class="slanted-divider"></div>
+
+    <!-- Footer Section (Dynamic Injection) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Layout Handler Script -->
+    <script src="./layout.js"></script>
+</body>
+</html>

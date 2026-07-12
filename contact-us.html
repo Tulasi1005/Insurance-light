@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Quintera</title>
+    <meta name="description" content="Get in touch with Quintera. Contact our toll-free lines or submit your request via our interactive advisor form.">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Main Style Guide -->
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .contact-info-box {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow-premium);
+        }
+        .contact-item {
+            margin-bottom: 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .contact-item i {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-top: 4px;
+        }
+        .contact-item h4 {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+        .contact-item p {
+            font-size: 0.95rem;
+        }
+        .map-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            margin-top: 50px;
+            height: 450px;
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section (Dynamic Injection) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <div class="breadcrumbs">
+                <a href="./index.html">Home</a> / <span>Contact Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="grid-2">
+                <!-- Contact Details -->
+                <div>
+                    <div class="contact-info-box">
+                        <div>
+                            <h2 style="color: var(--text-light); font-size: 2rem; margin-bottom: 30px;">Get in touch</h2>
+                            
+                            <!-- US Canada Toll-Free -->
+                            <div class="contact-item">
+                                <i class="fas fa-phone-square-alt"></i>
+                                <div>
+                                    <h4>Toll-Free Advisor Line</h4>
+                                    <p style="font-size: 1.5rem; font-weight: 700; color: var(--secondary-color);">980-776-5292</p>
+                                </div>
+                            </div>
+
+                            <!-- Local Direct -->
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <h4>Corporate Office Direct</h4>
+                                    <p style="font-size: 1.5rem; font-weight: 700; color: var(--secondary-color);">980-776-5292</p>
+                                </div>
+                            </div>
+
+                            <!-- Offices -->
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Advisor Office Address</h4>
+                                    <p>2009 Embassy cr Charlotte NC 28213</p>
+                                    <p style="font-size: 0.85rem; margin-top: 4px; opacity: 0.8; color: var(--text-light);">Advisor email: sales@quintera.us</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="border-top: 1px solid var(--border-color); padding-top: 20px;">
+                            <p style="font-size: 0.9rem;">Our corporate hours are 8:00 AM to 8:00 PM, Monday through Friday. Advisors are standing by to process your requests.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <div class="contact-form-container">
+                        <h2 style="margin-bottom: 8px;">We’d love to hear from you</h2>
+                        <p class="text-muted" style="margin-bottom: 32px;">Please fill out the request form below. An advisor will get back to you shortly.</p>
+                        
+                        <form id="contact-form">
+                            <!-- Name row -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="first-name">First Name *</label>
+                                    <input class="form-control" type="text" id="first-name" placeholder="John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="last-name">Last Name *</label>
+                                    <input class="form-control" type="text" id="last-name" placeholder="Doe" required>
+                                </div>
+                            </div>
+
+                            <!-- Phone & Email -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">Telephone / Mobile *</label>
+                                    <input class="form-control" type="tel" id="phone" placeholder="980-776-5292" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Email *</label>
+                                    <input class="form-control" type="email" id="email" placeholder="john.doe@example.com" required>
+                                </div>
+                            </div>
+
+                            <!-- Service Selector -->
+                            <div class="form-group">
+                                <label class="form-label" for="service-select">Interested Service *</label>
+                                <select class="form-control" id="service-select" required style="width: 100%; height: 42px; border: 1px solid var(--border-color); border-radius: 4px; padding: 0 10px; outline: none; background-color: var(--primary-light); font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--text-light);">
+                                    <option value="">-- Select a Service --</option>
+                                    <option value="Personal Lines Coverage">Personal Lines Coverage</option>
+                                    <option value="Commercial Coverage">Commercial Coverage</option>
+                                    <option value="Residential and Commercial Real Estate Services">Residential & Commercial Real Estate</option>
+                                    <option value="Policy Management">Policy Management</option>
+                                    <option value="Risk Assessment">Risk Assessment</option>
+                                </select>
+                            </div>
+
+                            <!-- Message / Notes -->
+                            <div class="form-group">
+                                <label class="form-label" for="message">Message / Notes *</label>
+                                <textarea class="form-control" id="message" placeholder="Provide any details or notes regarding your request..." required style="height: 120px;"></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button class="btn btn-primary" type="submit" style="width: 100%;">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Footer Section (Dynamic Injection) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Layout Handler Script -->
+    <script src="./layout.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const serviceParam = params.get("service");
+            if (serviceParam) {
+                const selectEl = document.getElementById("service-select");
+                if (selectEl) {
+                    for (let i = 0; i < selectEl.options.length; i++) {
+                        if (selectEl.options[i].value.toLowerCase() === serviceParam.toLowerCase() || 
+                            selectEl.options[i].text.toLowerCase().includes(serviceParam.toLowerCase())) {
+                            selectEl.selectedIndex = i;
+                            break;
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

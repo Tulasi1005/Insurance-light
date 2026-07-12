@@ -1,0 +1,16 @@
+{
+  "name": "quintera-portal",
+  "version": "1.0.0",
+  "description": "Quintera Rebranded Corporate Portal Backend and Site Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^4.22.2",
+    "nodemailer": "^6.10.1",
+    "resend": "^6.17.2"
+  }
+}

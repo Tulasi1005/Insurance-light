@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Quintera</title>
+    <meta name="description" content="Explore personal lines, commercial coverage, real estate, policy management, and risk assessment services from Quintera.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Modern Tabs styling */
+        .services-filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+        .filter-tab-btn {
+            background-color: var(--primary-light);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 12px 28px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .filter-tab-btn:hover, .filter-tab-btn.active {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Services Grid Layout */
+        .services-showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        
+        .service-showcase-card {
+            background-color: var(--primary-light);
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            padding: 40px 32px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-showcase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--grad-gold);
+            opacity: 0.8;
+        }
+
+        .service-showcase-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-premium);
+        }
+        
+        .service-card-header {
+            margin-bottom: 24px;
+        }
+        
+        .service-card-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .service-card-title {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .service-card-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .service-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0 32px;
+        }
+        
+        .service-bullets li {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .service-bullets li i {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        /* Banner CTA */
+        .services-cta-banner {
+            background-image: linear-gradient(135deg, rgba(11,19,43,0.95) 0%, rgba(28,37,65,0.95) 100%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section (Dynamic Injection) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Services</h1>
+            <div class="breadcrumbs">
+                <a href="./index.html">Home</a> / <span>Services</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center" style="max-width: 800px; margin: 0 auto 50px;">
+                <p class="text-gold" style="font-family: 'Outfit', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Advisor Portfolio</p>
+                <h2 style="font-size: 2.2rem; margin-top: 8px; margin-bottom: 16px;">Advisory & Protection Solutions</h2>
+                <p class="text-muted">Quintera offers professional insurance advisory, policy management, risk assessment, and commercial/residential real estate brokerage services tailored to your exact requirements.</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="services-filter-tabs">
+                <button class="filter-tab-btn active" onclick="filterServices('all')">All Services</button>
+                <button class="filter-tab-btn" onclick="filterServices('insurance')">Insurance Coverage</button>
+                <button class="filter-tab-btn" onclick="filterServices('realestate')">Real Estate</button>
+                <button class="filter-tab-btn" onclick="filterServices('advisory')">Advisory & Policy</button>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-showcase-grid" id="services-grid">
+                
+                <!-- Card 1: Personal Lines -->
+                <div class="service-showcase-card" data-category="insurance">
+                    <div>
+                        <div class="service-card-header">
+                            <div class="service-card-icon"><i class="fas fa-home"></i></div>
+                            <h3 class="service-card-title">Personal Lines Coverage</h3>
+                            <p class="service-card-desc">Providing custom insurance plans and policies tailored to safeguard your personal properties, vehicles, and liability exposures.</p>
+                        </div>
+                        <ul class="service-bullets">
+                            <li><i class="fas fa-check-circle"></i> Homeowners & Renters Protection</li>
+                            <li><i class="fas fa-check-circle"></i> Auto & Boat Coverages</li>
+                            <li><i class="fas fa-check-circle"></i> Personal Umbrella Policy</li>
+                        </ul>
+                    </div>
+                    <a href="./contact-us.html?service=Personal%20Lines%20Coverage" class="btn btn-primary" style="width: 100%; text-align: center;">Request Personal Quote</a>
+                </div>
+
+                <!-- Card 2: Commercial Coverage -->
+                <div class="service-showcase-card" data-category="insurance">
+                    <div>
+                        <div class="service-card-header">
+                            <div class="service-card-icon"><i class="fas fa-building"></i></div>
+                            <h3 class="service-card-title">Commercial Coverage</h3>
+                            <p class="service-card-desc">Helping corporate clients protect what matters most with business liabilities, vehicle fleets, workplace safety, and corporate properties.</p>
+                        </div>
+                        <ul class="service-bullets">
+                            <li><i class="fas fa-check-circle"></i> General Liability Cover</li>
+                            <li><i class="fas fa-check-circle"></i> Commercial Auto & Property</li>
+                            <li><i class="fas fa-check-circle"></i> Workers' Compensation</li>
+                        </ul>
+                    </div>
+                    <a href="./contact-us.html?service=Commercial%20Coverage" class="btn btn-primary" style="width: 100%; text-align: center;">Request Commercial Quote</a>
+                </div>
+
+                <!-- Card 3: Real Estate Services -->
+                <div class="service-showcase-card" data-category="realestate">
+                    <div>
+                        <div class="service-card-header">
+                            <div class="service-card-icon"><i class="fas fa-key"></i></div>
+                            <h3 class="service-card-title">Residential & Commercial Real Estate</h3>
+                            <p class="service-card-desc">Distinguished brokerage support facilitating transaction purchase, sales advisory, leasing, and tenant representation.</p>
+                        </div>
+                        <ul class="service-bullets">
+                            <li><i class="fas fa-check-circle"></i> Residential Sales & Purchase</li>
+                            <li><i class="fas fa-check-circle"></i> Commercial Property Brokerage</li>
+                            <li><i class="fas fa-check-circle"></i> Leasing & Tenant Negotiations</li>
+                        </ul>
+                    </div>
+                    <a href="./contact-us.html?service=Residential%20and%20Commercial%20Real%20Estate%20Services" class="btn btn-primary" style="width: 100%; text-align: center;">Speak to Real Estate Advisor</a>
+                </div>
+
+                <!-- Card 4: Policy Management -->
+                <div class="service-showcase-card" data-category="advisory">
+                    <div>
+                        <div class="service-card-header">
+                            <div class="service-card-icon"><i class="fas fa-file-invoice"></i></div>
+                            <h3 class="service-card-title">Policy Management</h3>
+                            <p class="service-card-desc">Handling all updates, endorsement revisions, claims assistance, and policy renewals to provide continuous protection and peace of mind.</p>
+                        </div>
+                        <ul class="service-bullets">
+                            <li><i class="fas fa-check-circle"></i> Policy Changes & Updates</li>
+                            <li><i class="fas fa-check-circle"></i> Comprehensive Claims Support</li>
+                            <li><i class="fas fa-check-circle"></i> Renewals & Account Audits</li>
+                        </ul>
+                    </div>
+                    <a href="./contact-us.html?service=Policy%20Management" class="btn btn-primary" style="width: 100%; text-align: center;">Request Policy Service</a>
+                </div>
+
+                <!-- Card 5: Risk Assessment -->
+                <div class="service-showcase-card" data-category="advisory">
+                    <div>
+                        <div class="service-card-header">
+                            <div class="service-card-icon"><i class="fas fa-shield-alt"></i></div>
+                            <h3 class="service-card-title">Risk Assessment</h3>
+                            <p class="service-card-desc">Evaluating potential liability risks, advising on coverage limit recommendations, and preparing umbrella risk solutions.</p>
+                        </div>
+                        <ul class="service-bullets">
+                            <li><i class="fas fa-check-circle"></i> Exposure Evaluation & Audits</li>
+                            <li><i class="fas fa-check-circle"></i> Coverage Limit Advisory</li>
+                            <li><i class="fas fa-check-circle"></i> Umbrella Liability Risk Coverage</li>
+                        </ul>
+                    </div>
+                    <a href="./contact-us.html?service=Risk%20Assessment" class="btn btn-primary" style="width: 100%; text-align: center;">Request Risk Evaluation</a>
+                </div>
+
+            </div>
+
+            <!-- Banner CTA -->
+            <div class="services-cta-banner">
+                <h2 style="color: white; font-size: 2rem; margin-bottom: 12px; font-family: 'Outfit', sans-serif;">Need a Custom Advisor Solution?</h2>
+                <p style="max-width: 600px; margin: 0 auto 30px; font-size: 1.05rem; opacity: 0.9;">Tell us about your needs and we'll have a Quintera Advisor build a personalized plan for you.</p>
+                <a href="./contact-us.html" class="btn btn-secondary" style="padding: 14px 40px; font-weight: 700;">Connect with an Advisor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section (Dynamic Injection) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Layout Handler Script -->
+    <script src="./layout.js"></script>
+    <script>
+        function filterServices(category) {
+            // Update active tab button style
+            const buttons = document.querySelectorAll(".filter-tab-btn");
+            buttons.forEach(btn => btn.classList.remove("active"));
+            
+            // Find clicked button
+            const clickedBtn = Array.from(buttons).find(btn => 
+                btn.getAttribute("onclick").includes("'" + category + "'")
+            );
+            if (clickedBtn) clickedBtn.classList.add("active");
+            
+            // Filter cards
+            const cards = document.querySelectorAll(".service-showcase-card");
+            cards.forEach(card => {
+                if (category === "all" || card.getAttribute("data-category") === category) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        // Parse URL query parameter for filter on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const filterParam = urlParams.get('filter');
+            if (filterParam) {
+                filterServices(filterParam);
+            }
+        });
+    </script>
+</body>
+</html>

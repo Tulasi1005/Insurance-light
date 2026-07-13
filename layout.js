@@ -23,8 +23,8 @@ const getPath = (filename) => `./${filename}`;
 // Quintera Holdings Metallic Branding Logo
 const starLogoSVG = `
 <div style="display: flex; align-items: center; gap: 10px;">
-  <img src="${getPath('logo.jpg')}" alt="Quintera Logo" style="height: 48px; width: auto; border-radius: 4px; box-shadow: var(--shadow-sm);">
-  <span class="header-logo-text">QUINTERA</span>
+  <img src="${getPath('logo-fin.png')}" alt="Quintera Logo" style="height: 48px; width: auto; ">
+  
 </div>
 `;
 
@@ -111,7 +111,7 @@ function injectHeader() {
             </div>
         </header>
     `;
-    
+
     headerPlaceholder.outerHTML = headerHTML;
 }
 
@@ -122,45 +122,16 @@ function injectFooter() {
     const footerHTML = `
         <footer>
             <div class="container-fluid footer-grid">
-                <!-- Column 1: WHAT'S NEW -->
-                <div class="footer-col">
-                    <h4>WHAT'S NEW</h4>
-                    <ul style="line-height: 1.4;">
-                        <li style="margin-bottom: 12px;">
-                            <a href="${getPath('community-activities.html')}" style="font-weight: 500; font-size: 0.9rem; display: block; margin-bottom: 2px;">&gt; Quintera Q2 eNewsletter 2026</a>
-                            <span style="font-size: 0.75rem; opacity: 0.6;">July 3, 2026</span>
-                        </li>
-                        <li style="margin-bottom: 12px;">
-                            <a href="${getPath('community-activities.html')}" style="font-weight: 500; font-size: 0.9rem; display: block; margin-bottom: 2px;">&gt; Quintera Q1 eNewsletter</a>
-                            <span style="font-size: 0.75rem; opacity: 0.6;">March 26, 2026</span>
-                        </li>
-                        <li style="margin-bottom: 12px;">
-                            <a href="${getPath('community-activities.html')}" style="font-weight: 500; font-size: 0.9rem; display: block; margin-bottom: 2px;">&gt; Quintera Advisor Payout Program</a>
-                            <span style="font-size: 0.75rem; opacity: 0.6;">November 11, 2025</span>
-                        </li>
-                        <li style="margin-bottom: 12px;">
-                            <a href="${getPath('community-activities.html')}" style="font-weight: 500; font-size: 0.9rem; display: block; margin-bottom: 2px;">&gt; Client Newsletter August 2025</a>
-                            <span style="font-size: 0.75rem; opacity: 0.6;">September 30, 2025</span>
-                        </li>
-                    </ul>
-                </div>
 
                 <!-- Column 2: QUINTERA LOCATIONS -->
                 <div class="footer-col">
-                    <h4>QUINTERA OFFICES</h4>
+                    <h4>QUINTERA OFFICE</h4>
                     <ul style="font-size: 0.85rem; line-height: 1.4;">
                         <li style="margin-bottom: 10px;">
-                            <strong>Advisor Office – 2009 Embassy cr Charlotte NC 28213</strong><br>
-                            <span style="opacity: 0.7;">Mon – Fri 8:00am – 8:00pm, Sat-Sun: Closed</span>
+                            <strong>Address - 2009 Embassy cr Charlotte NC 28213</strong><br>
+                            
                         </li>
-                        <li style="margin-bottom: 10px;">
-                            <strong>Kingston Branch – Knutsford Boulevard</strong><br>
-                            <span style="opacity: 0.7;">Mon – Fri 8:30am – 4:00pm, Sat: Closed</span>
-                        </li>
-                        <li style="margin-bottom: 0;">
-                            <strong>Mandeville Branch – Midway Mall</strong><br>
-                            <span style="opacity: 0.7;">Mon – Fri 8:30am – 4:00pm, Sat: Closed</span>
-                        </li>
+                       
                     </ul>
                 </div>
 
@@ -192,7 +163,7 @@ function injectFooter() {
             
             <div class="footer-bottom-dark">
                 <div class="container-fluid footer-bottom">
-                    <p>&copy; 2026 Quintera | All Rights Reserved | sales@quintera.us | 980-776-5292 | 2009 Embassy cr Charlotte NC 28213 | <a href="#">Terms of use</a> | <a href="#">Privacy Notice</a> | <a href="#">Cookie Policy</a></p>
+                    <p>&copy; 2026 Quintera | All Rights Reserved | sales@quintera.us | 980-776-5292 | 2009 Embassy cr Charlotte NC 28213 </p>
                     <div class="social-icons" style="font-size: 1.2rem; display: flex; gap: 15px; justify-content: center; opacity: 0.8;">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -217,12 +188,13 @@ function injectCookieBanner() {
         <h4 style="margin-bottom: 8px;"><i class="fas fa-cookie-bite"></i> Cookie Consent</h4>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;">We use cookies to improve your experience on our site. By using our site, you consent to cookies. Please read our Cookie Policy.</p>
         <div class="cookie-actions">
+            <button class="btn btn-outline btn-sm" id="cookie-settings-btn" onclick="alert('Cookie Settings details (Dummy).')">Preferences</button>
             <button class="btn btn-primary btn-sm" id="cookie-accept-btn">Accept All</button>
         </div>
     `;
 
     document.body.appendChild(banner);
-    
+
     setTimeout(() => {
         banner.classList.add("active");
     }, 1000);
@@ -242,7 +214,7 @@ function setupMobileMenu() {
     hamburger.addEventListener("click", () => {
         menu.classList.toggle("active");
         hamburger.classList.toggle("active");
-        
+
         const spans = hamburger.querySelectorAll("span");
         if (hamburger.classList.contains("active")) {
             spans[0].style.transform = "rotate(45deg) translate(6px, 6px)";
@@ -294,9 +266,9 @@ function triggerEmailReflect(subject, bodyData) {
         emailBody += `• ${key}: ${val}\n`;
     }
     emailBody += "\nBest Regards,\nQuintera Support Team\n";
-    
-    const mailtoUrl = `mailto:sales@quintera.us?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-    
+
+    const mailtoUrl = `mailto:tulasilaxmi.mandala@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+
     const mailLink = document.createElement("a");
     mailLink.href = mailtoUrl;
     mailLink.target = "_blank";
@@ -312,10 +284,10 @@ function setupContactForm() {
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        
+
         const fields = form.querySelectorAll(".form-control[required]");
         let valid = true;
-        
+
         fields.forEach(field => {
             if (!field.value.trim()) {
                 valid = false;
@@ -361,26 +333,26 @@ function setupContactForm() {
                 message: msgVal
             })
         })
-        .then(response => response.json())
-        .then(data => {
-            overlay.remove(); // Remove loading spinner
-            
-            // Build the success overlay
-            const successOverlay = document.createElement("div");
-            successOverlay.className = "success-overlay";
-            
-            let previewButtonHTML = "";
-            if (data.success && data.previewUrl) {
-                previewButtonHTML = `
+            .then(response => response.json())
+            .then(data => {
+                overlay.remove(); // Remove loading spinner
+
+                // Build the success overlay
+                const successOverlay = document.createElement("div");
+                successOverlay.className = "success-overlay";
+
+                let previewButtonHTML = "";
+                if (data.success && data.previewUrl) {
+                    previewButtonHTML = `
                     <div style="margin-top: 15px; margin-bottom: 20px; text-align: center;">
                         <a href="${data.previewUrl}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
                             <i class="fas fa-envelope-open-text"></i> View Received Email (Ethereal)
                         </a>
                     </div>
                 `;
-            }
+                }
 
-            successOverlay.innerHTML = `
+                successOverlay.innerHTML = `
                 <div class="success-box" style="text-align: left; max-width: 500px;">
                     <div class="success-icon" style="text-align: center;"><i class="fas fa-check-circle"></i></div>
                     <h2 style="margin-bottom: 12px; color: var(--primary-color); text-align: center;">Inquiry Transmitted!</h2>
@@ -401,35 +373,35 @@ function setupContactForm() {
                     <button class="btn btn-primary" id="success-close-btn" style="width: 100%;">Close Window</button>
                 </div>
             `;
-            document.body.appendChild(successOverlay);
-            setTimeout(() => successOverlay.classList.add("active"), 50);
+                document.body.appendChild(successOverlay);
+                setTimeout(() => successOverlay.classList.add("active"), 50);
 
-            document.getElementById("success-close-btn").addEventListener("click", () => {
-                successOverlay.classList.remove("active");
-                setTimeout(() => {
-                    successOverlay.remove();
-                    form.reset();
-                }, 300);
-            });
-        })
-        .catch(err => {
-            console.warn("Fallback to client mailto since Nodemailer server is offline:", err);
-            overlay.remove(); // Remove loading spinner
-            
-            // Fallback: Trigger client-side mailto draft
-            triggerEmailReflect("Quintera Portal Submission", {
-                "Full Name": nameVal,
-                "Email Address": emailVal,
-                "Phone Number": phoneVal,
-                "Selected Service": serviceVal,
-                "Details / Notes": msgVal,
-                "Submission Source": "Website Contact Portal"
-            });
+                document.getElementById("success-close-btn").addEventListener("click", () => {
+                    successOverlay.classList.remove("active");
+                    setTimeout(() => {
+                        successOverlay.remove();
+                        form.reset();
+                    }, 300);
+                });
+            })
+            .catch(err => {
+                console.warn("Fallback to client mailto since Nodemailer server is offline:", err);
+                overlay.remove(); // Remove loading spinner
 
-            // Display standard success fallback overlay
-            const successOverlay = document.createElement("div");
-            successOverlay.className = "success-overlay";
-            successOverlay.innerHTML = `
+                // Fallback: Trigger client-side mailto draft
+                triggerEmailReflect("Quintera Portal Submission", {
+                    "Full Name": nameVal,
+                    "Email Address": emailVal,
+                    "Phone Number": phoneVal,
+                    "Selected Service": serviceVal,
+                    "Details / Notes": msgVal,
+                    "Submission Source": "Website Contact Portal"
+                });
+
+                // Display standard success fallback overlay
+                const successOverlay = document.createElement("div");
+                successOverlay.className = "success-overlay";
+                successOverlay.innerHTML = `
                 <div class="success-box" style="text-align: left; max-width: 500px;">
                     <div class="success-icon" style="text-align: center;"><i class="fas fa-check-circle"></i></div>
                     <h2 style="margin-bottom: 12px; color: var(--primary-color); text-align: center;">Request Prepared!</h2>
@@ -446,17 +418,17 @@ function setupContactForm() {
                     <button class="btn btn-primary" id="success-close-btn" style="width: 100%;">Close Window</button>
                 </div>
             `;
-            document.body.appendChild(successOverlay);
-            setTimeout(() => successOverlay.classList.add("active"), 50);
+                document.body.appendChild(successOverlay);
+                setTimeout(() => successOverlay.classList.add("active"), 50);
 
-            document.getElementById("success-close-btn").addEventListener("click", () => {
-                successOverlay.classList.remove("active");
-                setTimeout(() => {
-                    successOverlay.remove();
-                    form.reset();
-                }, 300);
+                document.getElementById("success-close-btn").addEventListener("click", () => {
+                    successOverlay.classList.remove("active");
+                    setTimeout(() => {
+                        successOverlay.remove();
+                        form.reset();
+                    }, 300);
+                });
             });
-        });
     });
 }
 
@@ -542,10 +514,10 @@ function initLiveChat() {
     function handleSend() {
         const text = inputField.value.trim();
         if (!text) return;
-        
+
         appendMessage(text, "user");
         inputField.value = "";
-        
+
         // Simulate thinking and respond
         setTimeout(() => {
             processBotResponse(text);
@@ -585,7 +557,7 @@ function initLiveChat() {
 
     function processBotResponse(input) {
         const normalized = input.toLowerCase().trim();
-        
+
         if (normalized === "0") {
             chatState = ""; // reset state
             showMainMenu();
@@ -594,7 +566,7 @@ function initLiveChat() {
 
         if (chatState === "waiting_for_complaint") {
             chatState = ""; // reset state
-            
+
             // Extract values
             let name = "Not provided";
             let email = "Not provided";
@@ -602,12 +574,12 @@ function initLiveChat() {
             let rep = "Not provided";
             let phone = "Not provided";
             let details = input;
-            
+
             const lines = input.split("\n");
             lines.forEach(line => {
                 const clean = line.replace(/^[•\-\*]\s*/, "").trim();
                 const lower = clean.toLowerCase();
-                
+
                 if (lower.startsWith("full name:") || lower.startsWith("name:")) {
                     name = clean.substring(clean.indexOf(":") + 1).trim();
                 } else if (lower.startsWith("email address:") || lower.startsWith("email:")) {
@@ -805,14 +777,14 @@ function setupFooterSearch() {
                 const resp = await fetch(getPath(page.url));
                 if (resp.ok) {
                     const html = await resp.text();
-                    
+
                     // Create dummy element to extract text and strip HTML nodes/scripts/styles
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(html, 'text/html');
-                    
+
                     // Remove scripts, header, and footer from search indexing to avoid duplicate header/footer matches
                     doc.querySelectorAll("script, style, header, footer, #header-placeholder, #footer-placeholder").forEach(el => el.remove());
-                    
+
                     const textContent = doc.body.textContent || doc.body.innerText || "";
                     const normalizedText = textContent.toLowerCase();
 
@@ -845,7 +817,7 @@ function setupFooterSearch() {
         // Create results modal
         const overlay = document.createElement("div");
         overlay.className = "success-overlay";
-        
+
         let resultsHTML = "";
         if (results.length > 0) {
             resultsHTML = `<div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">`;
@@ -879,7 +851,7 @@ function setupFooterSearch() {
                 <button class="btn btn-primary" id="search-close-btn" style="width: 100%; flex-shrink: 0;">Close Results</button>
             </div>
         `;
-        
+
         document.body.appendChild(overlay);
         setTimeout(() => overlay.classList.add("active"), 50);
 
@@ -897,7 +869,7 @@ function setupTheme() {
     const themeText = document.getElementById("theme-text");
     const mobileThemeIcon = document.getElementById("mobile-theme-icon");
     const mobileThemeText = document.getElementById("mobile-theme-text");
-    
+
     if (savedTheme === "light") {
         body.classList.add("light-mode");
         if (themeIcon) themeIcon.className = "fas fa-moon";
@@ -919,9 +891,9 @@ window.toggleTheme = () => {
     const themeText = document.getElementById("theme-text");
     const mobileThemeIcon = document.getElementById("mobile-theme-icon");
     const mobileThemeText = document.getElementById("mobile-theme-text");
-    
+
     body.classList.toggle("light-mode");
-    
+
     if (body.classList.contains("light-mode")) {
         localStorage.setItem("theme", "light");
         if (themeIcon) themeIcon.className = "fas fa-moon";

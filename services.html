@@ -141,6 +141,110 @@
             color: white;
             box-shadow: var(--shadow-lg);
         }
+
+        /* Modal Overlay Styles */
+        .modal-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 27, 43, 0.85);
+            z-index: 11000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-wrapper.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-box {
+            background-color: var(--primary-light);
+            border: 1px solid var(--border-color);
+            width: 90%;
+            max-width: 650px;
+            border-radius: 12px;
+            padding: 40px;
+            position: relative;
+            box-shadow: var(--shadow-premium);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal-wrapper.active .modal-box {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--secondary-color);
+        }
+
+        .modal-title {
+            color: var(--secondary-color);
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .modal-desc-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .modal-detail-list {
+            margin-top: 20px;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .modal-detail-item {
+            background-color: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .modal-detail-item h4 {
+            color: var(--secondary-color);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modal-detail-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -192,7 +296,10 @@
                             <li><i class="fas fa-check-circle"></i> Personal Umbrella Policy</li>
                         </ul>
                     </div>
-                    <a href="./contact-us.html?service=Personal%20Lines%20Coverage" class="btn btn-primary" style="width: 100%; text-align: center;">Request Personal Quote</a>
+                    <div style="display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap;">
+                        <button class="btn btn-secondary" onclick="openServiceModal('personal')" style="flex: 1; min-width: 100px; text-align: center; padding: 10px 15px; font-size: 0.85rem;">Read More</button>
+                        <a href="./contact-us.html?service=Personal%20Lines%20Coverage" class="btn btn-primary" style="flex: 1.5; min-width: 140px; text-align: center; padding: 10px 15px; font-size: 0.85rem;">Request Quote</a>
+                    </div>
                 </div>
 
                 <!-- Card 2: Commercial Coverage -->
@@ -209,7 +316,10 @@
                             <li><i class="fas fa-check-circle"></i> Workers' Compensation</li>
                         </ul>
                     </div>
-                    <a href="./contact-us.html?service=Commercial%20Coverage" class="btn btn-primary" style="width: 100%; text-align: center;">Request Commercial Quote</a>
+                    <div style="display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap;">
+                        <button class="btn btn-secondary" onclick="openServiceModal('commercial')" style="flex: 1; min-width: 100px; text-align: center; padding: 10px 15px; font-size: 0.85rem;">Read More</button>
+                        <a href="./contact-us.html?service=Commercial%20Coverage" class="btn btn-primary" style="flex: 1.5; min-width: 140px; text-align: center; padding: 10px 15px; font-size: 0.85rem;">Request Quote</a>
+                    </div>
                 </div>
 
                 <!-- Card 3: Real Estate Services -->
@@ -226,7 +336,10 @@
                             <li><i class="fas fa-check-circle"></i> Leasing & Tenant Negotiations</li>
                         </ul>
                     </div>
-                    <a href="./contact-us.html?service=Residential%20and%20Commercial%20Real%20Estate%20Services" class="btn btn-primary" style="width: 100%; text-align: center;">Speak to Real Estate Advisor</a>
+                    <div style="display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap;">
+                        <button class="btn btn-secondary" onclick="openServiceModal('realestate')" style="flex: 1; min-width: 100px; text-align: center; padding: 10px 15px; font-size: 0.85rem;">Read More</button>
+                        <a href="./contact-us.html?service=Residential%20and%20Commercial%20Real%20Estate%20Services" class="btn btn-primary" style="flex: 1.5; min-width: 140px; text-align: center; padding: 10px 15px; font-size: 0.85rem;">Speak to Advisor</a>
+                    </div>
                 </div>
 
                 <!-- Card 4: Policy Management -->
@@ -243,7 +356,10 @@
                             <li><i class="fas fa-check-circle"></i> Renewals & Account Audits</li>
                         </ul>
                     </div>
-                    <a href="./contact-us.html?service=Policy%20Management" class="btn btn-primary" style="width: 100%; text-align: center;">Request Policy Service</a>
+                    <div style="display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap;">
+                        <button class="btn btn-secondary" onclick="openServiceModal('policymanagement')" style="flex: 1; min-width: 100px; text-align: center; padding: 10px 15px; font-size: 0.85rem;">Read More</button>
+                        <a href="./contact-us.html?service=Policy%20Management" class="btn btn-primary" style="flex: 1.5; min-width: 140px; text-align: center; padding: 10px 15px; font-size: 0.85rem;">Request Service</a>
+                    </div>
                 </div>
 
                 <!-- Card 5: Risk Assessment -->
@@ -260,7 +376,10 @@
                             <li><i class="fas fa-check-circle"></i> Umbrella Liability Risk Coverage</li>
                         </ul>
                     </div>
-                    <a href="./contact-us.html?service=Risk%20Assessment" class="btn btn-primary" style="width: 100%; text-align: center;">Request Risk Evaluation</a>
+                    <div style="display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap;">
+                        <button class="btn btn-secondary" onclick="openServiceModal('riskassessment')" style="flex: 1; min-width: 100px; text-align: center; padding: 10px 15px; font-size: 0.85rem;">Read More</button>
+                        <a href="./contact-us.html?service=Risk%20Assessment" class="btn btn-primary" style="flex: 1.5; min-width: 140px; text-align: center; padding: 10px 15px; font-size: 0.85rem;">Request Evaluation</a>
+                    </div>
                 </div>
 
             </div>
@@ -273,6 +392,16 @@
             </div>
         </div>
     </section>
+
+    <!-- Service Detail Modal Overlay -->
+    <div id="service-modal" class="modal-wrapper">
+        <div class="modal-box">
+            <span class="modal-close" onclick="closeServiceModal()">&times;</span>
+            <div id="modal-content">
+                <!-- Loaded dynamically by Javascript -->
+            </div>
+        </div>
+    </div>
 
     <!-- Footer Section (Dynamic Injection) -->
     <div id="footer-placeholder"></div>
@@ -308,6 +437,144 @@
             const filterParam = urlParams.get('filter');
             if (filterParam) {
                 filterServices(filterParam);
+            }
+        });
+
+        // Service Details Data Object for Modal popups
+        const serviceData = {
+            personal: {
+                title: "Personal Lines Coverage",
+                desc: "Providing custom insurance plans and policies tailored to safeguard your personal properties, vehicles, and liability exposures.",
+                details: [
+                    {
+                        title: "Homeowners & Renters Protection",
+                        desc: "Full replacement value coverage for dwelling structures, detached buildings, personal belongings, loss of use, and liability protection from accidents occurring on your premises."
+                    },
+                    {
+                        title: "Auto & Boat Coverages",
+                        desc: "High-limit comprehensive, collision, and liability plans for personal vehicles, motorboats, yachts, and jet skis with roadside or water assistance inclusions."
+                    },
+                    {
+                        title: "Personal Umbrella Policy",
+                        desc: "Additional layers of liability protection starting at $1M, designed to safeguard your wealth and personal assets from large lawsuits or judgements exceeding primary coverage limits."
+                    }
+                ]
+            },
+            commercial: {
+                title: "Commercial Coverage",
+                desc: "Helping corporate clients protect what matters most with business liabilities, vehicle fleets, workplace safety, and corporate properties.",
+                details: [
+                    {
+                        title: "General Liability Cover",
+                        desc: "Comprehensive defense and indemnity against lawsuits alleging third-party bodily injury, property damage, advertising injury, or personal injury."
+                    },
+                    {
+                        title: "Commercial Auto & Property",
+                        desc: "High-limit protection for commercial buildings, warehouse equipment, business vehicles, cargo, and inventory from damage, loss, or theft."
+                    },
+                    {
+                        title: "Workers' Compensation",
+                        desc: "Regulatory-compliant programs providing wage replacement and medical benefits to employees injured on the job, protecting employers from civil liability."
+                    }
+                ]
+            },
+            realestate: {
+                title: "Residential & Commercial Real Estate",
+                desc: "Distinguished brokerage support facilitating transaction purchase, sales advisory, leasing, and tenant representation.",
+                details: [
+                    {
+                        title: "Residential Sales & Purchase",
+                        desc: "Helping buyers and sellers navigate home transactions, comparative market analysis, staging, professional listings, showings, and contract closures."
+                    },
+                    {
+                        title: "Commercial Property Brokerage",
+                        desc: "Professional advisory on retail spaces, office buildings, warehouses, and land purchase/sale transactions targeting maximum yield and long-term appreciation."
+                    },
+                    {
+                        title: "Leasing & Tenant Negotiations",
+                        desc: "Structuring commercial leases, conducting tenant reviews, structuring tenant representation deals, and negotiating leases to optimize tenant terms."
+                    }
+                ]
+            },
+            policymanagement: {
+                title: "Policy Management",
+                desc: "Handling all updates, endorsement revisions, claims assistance, and policy renewals to provide continuous protection and peace of mind.",
+                details: [
+                    {
+                        title: "Policy Changes & Updates",
+                        desc: "Prompt execution of endorsements, address changes, vehicle/driver additions, billing updates, and mortgagee clause adjustments."
+                    },
+                    {
+                        title: "Comprehensive Claims Support",
+                        desc: "Navigating the entire claims filing pathway, adjuster inspections support, loss documentation reviews, and negotiating swift settlements."
+                    },
+                    {
+                        title: "Renewals & Account Audits",
+                        desc: "Annual review of coverages, checking for gaps, evaluating new rate choices, and handling renewals to ensure continuous protection."
+                    }
+                ]
+            },
+            riskassessment: {
+                title: "Risk Assessment",
+                desc: "Evaluating potential liability risks, advising on coverage limit recommendations, and preparing umbrella risk solutions.",
+                details: [
+                    {
+                        title: "Exposure Evaluation & Audits",
+                        desc: "On-site inspections and operational audits identifying potential safety hazards, asset exposures, or coverage gaps."
+                    },
+                    {
+                        title: "Coverage Limit Advisory",
+                        desc: "Advanced data modeling recommending appropriate liability and property limits based on target asset structures and exposure risks."
+                    },
+                    {
+                        title: "Umbrella Liability Risk Coverage",
+                        desc: "Structuring comprehensive excess liability policies spanning multiple primary coverages to mitigate catastrophic loss exposures."
+                    }
+                ]
+            }
+        };
+
+        function openServiceModal(serviceKey) {
+            const data = serviceData[serviceKey];
+            if (!data) return;
+
+            const modal = document.getElementById("service-modal");
+            const content = document.getElementById("modal-content");
+
+            let detailsHTML = "";
+            data.details.forEach(item => {
+                detailsHTML += `
+                    <div class="modal-detail-item">
+                        <h4><i class="fas fa-check-circle" style="color: var(--secondary-color);"></i> ${item.title}</h4>
+                        <p>${item.desc}</p>
+                    </div>
+                `;
+            });
+
+            content.innerHTML = `
+                <h2 class="modal-title">${data.title}</h2>
+                <p style="color: var(--text-light); font-size: 1.05rem; line-height: 1.6; margin-bottom: 24px; opacity: 0.95;">${data.desc}</p>
+                <h3 class="modal-desc-title">Core Sub-Services & Coverage Details:</h3>
+                <div class="modal-detail-list">
+                    ${detailsHTML}
+                </div>
+            `;
+
+            modal.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeServiceModal() {
+            const modal = document.getElementById("service-modal");
+            modal.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        // Close modal on background click
+        window.addEventListener("click", (e) => {
+            const modal = document.getElementById("service-modal");
+            if (e.target === modal) {
+                closeServiceModal();
             }
         });
     </script>

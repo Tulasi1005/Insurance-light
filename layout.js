@@ -140,7 +140,6 @@ function injectFooter() {
                     <ul>
                         <li><a href="${getPath('about-us.html')}">About Us</a></li>
                         <li><a href="${getPath('contact-us.html')}">Contact Us</a></li>
-                        <li><a href="${getPath('claims.html')}">Claims Help</a></li>
                         <li><a href="${getPath('contact-us.html')}">Ask Us Anything</a></li>
                         <li><a href="${getPath('contact-us.html')}">Advisor Resource Center</a></li>
                     </ul>

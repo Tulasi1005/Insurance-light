@@ -62,7 +62,7 @@ function injectHeader() {
                 <div class="top-links">
                     <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292 </a>
                     <a href="#" id="header-live-chat-link"><i class="fas fa-comment-dots" style="margin-right: 4px;"></i> LIVE CHAT</a>
-                    <a href="${getPath('contact-us.html')}"><i class="fas fa-file-invoice-dollar" style="margin-right: 4px;"></i> POLICY SERVICES</a>
+                    <a href="${getPath('services.html')}"><i class="fas fa-file-invoice-dollar" style="margin-right: 4px;"></i> POLICY SERVICES</a>
                     <span style="color: var(--text-light); opacity: 0.8; font-size: 0.8rem; margin-left: 12px; font-weight: 600; letter-spacing: 1px;">VISION | INTEGRITY | IMPACT</span>
                 </div>
                 <div class="social-links" style="display: flex; align-items: center; gap: 10px;">

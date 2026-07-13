@@ -60,7 +60,7 @@ function injectHeader() {
         <div class="top-header">
             <div class="container-fluid top-header-row">
                 <div class="top-links">
-                    <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292 <span style="background-color: var(--secondary-color); color: var(--primary-color); padding: 2px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 2px; margin-left: 5px;">Get Started</span></a>
+                    <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292 </a>
                     <a href="#" id="header-live-chat-link"><i class="fas fa-comment-dots" style="margin-right: 4px;"></i> LIVE CHAT</a>
                     <a href="${getPath('contact-us.html')}"><i class="fas fa-file-invoice-dollar" style="margin-right: 4px;"></i> POLICY SERVICES</a>
                     <span style="color: var(--text-light); opacity: 0.8; font-size: 0.8rem; margin-left: 12px; font-weight: 600; letter-spacing: 1px;">VISION | INTEGRITY | IMPACT</span>
@@ -188,7 +188,7 @@ function injectCookieBanner() {
         <h4 style="margin-bottom: 8px;"><i class="fas fa-cookie-bite"></i> Cookie Consent</h4>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;">We use cookies to improve your experience on our site. By using our site, you consent to cookies. Please read our Cookie Policy.</p>
         <div class="cookie-actions">
-            <button class="btn btn-outline btn-sm" id="cookie-settings-btn" onclick="alert('Cookie Settings details (Dummy).')">Preferences</button>
+           
             <button class="btn btn-primary btn-sm" id="cookie-accept-btn">Accept All</button>
         </div>
     `;

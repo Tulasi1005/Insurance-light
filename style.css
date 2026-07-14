@@ -299,7 +299,7 @@ header {
     letter-spacing: 5px;
     color: var(--secondary-color); /* Gold in both modes */
     line-height: 1.1;
-    margin-top: 2px;
+    margin-top: 5px;
 }
 
 .brand-divider {

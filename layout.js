@@ -78,7 +78,7 @@ function injectHeader() {
             <div class="container-fluid top-header-row">
                 <div class="top-links">
 
-                    <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292 <span style="background: linear-gradient(145deg, #b58b42, #d4af37); color: #0a0a0f; padding: 2px 10px; font-size: 0.65rem; font-weight: 800; border-radius: 3px; margin-left: 5px; letter-spacing: 0.5px;">Get Started</span></a>
+                    <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292</a>
                     <a href="#" id="header-live-chat-link"><i class="fas fa-comment-dots" style="margin-right: 4px;"></i> LIVE CHAT</a>
                     <a href="${getPath('services.html')}"><i class="fas fa-file-invoice-dollar" style="margin-right: 4px;"></i> POLICY SERVICES</a>
 

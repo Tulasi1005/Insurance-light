@@ -39,7 +39,7 @@ const starFooterLogo1 = `
   <div style="position: absolute; top: -30%; right: -20%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(181, 139, 66, 0.03) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
   <div style="position: absolute; bottom: -20%; left: -20%; width: 80px; height: 80px; background: radial-gradient(circle, rgba(212, 175, 55, 0.02) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
   
-  <img src="${getPath('Quintera Transparent.png')}" alt="Quintera Holdings" style="height: 60px; width: auto; margin-bottom: 8px; filter: drop-shadow(0 4px 12px rgba(181, 139, 66, 0.2));">
+  <img src="${getPath('logo.png')}" alt="Quintera Holdings" style="height: 60px; width: auto; margin-bottom: 8px; filter: drop-shadow(0 4px 12px rgba(181, 139, 66, 0.2));">
   
   <div style="font-weight: 900; font-size: 1.4rem; color: #ffffff; font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; letter-spacing: 4px; background: linear-gradient(180deg, #ffffff 30%, #b8b8c8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">QUINTERA</div>
   <div style="font-size: 0.6rem; color: rgba(181, 139, 66, 0.6); font-weight: 400; letter-spacing: 8px; text-transform: uppercase; margin-top: 2px; -webkit-text-fill-color: rgba(181, 139, 66, 0.6); font-family: 'Outfit', sans-serif;">HOLDINGS</div>
@@ -81,9 +81,6 @@ function injectHeader() {
                 <div class="top-links">
 
                     <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292 <span style="background: linear-gradient(145deg, #b58b42, #d4af37); color: #0a0a0f; padding: 2px 10px; font-size: 0.65rem; font-weight: 800; border-radius: 3px; margin-left: 5px; letter-spacing: 0.5px;">Get Started</span></a>
-                    <a href="#" id="header-live-chat-link"><i class="fas fa-comment-dots" style="margin-right: 4px;"></i> LIVE CHAT</a>
-                    <a href="${getPath('services.html')}"><i class="fas fa-file-invoice-dollar" style="margin-right: 4px;"></i> POLICY SERVICES</a>
-                    <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292 </a>
                     <a href="#" id="header-live-chat-link"><i class="fas fa-comment-dots" style="margin-right: 4px;"></i> LIVE CHAT</a>
                     <a href="${getPath('services.html')}"><i class="fas fa-file-invoice-dollar" style="margin-right: 4px;"></i> POLICY SERVICES</a>
 

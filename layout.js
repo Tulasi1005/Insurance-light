@@ -27,7 +27,6 @@ const starLogoSVG = `
   <div class="brand-copy">
     <span class="brand-wordmark">QUINTERA</span>
     <span class="brand-submark">HOLDINGS</span>
-    
   </div>
 </div>
 `;

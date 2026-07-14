@@ -150,12 +150,8 @@ function injectFooter() {
 
                         <li><a href="${getPath('about-us.html')}" style="font-family: 'Outfit', sans-serif;">About Us</a></li>
                         <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Contact Us</a></li>
-                        <li><a href="${getPath('claims.html')}" style="font-family: 'Outfit', sans-serif;">Claims Help</a></li>
                         <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Ask Us Anything</a></li>
 
-                        <li><a href="${getPath('about-us.html')}">About Us</a></li>
-                        <li><a href="${getPath('contact-us.html')}">Contact Us</a></li>
-                        <li><a href="${getPath('contact-us.html')}">Ask Us Anything</a></li>
 
                     </ul>
                 </div>

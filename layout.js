@@ -1,5 +1,5 @@
 /* 
- * Star Insurance - Rebranded Shared Layout Script
+ * Quintera Holdings - Shared Layout Script
  * Injects Header, Navigation, Footer, and Cookie Consent
  * Matches layout screenshot structures exactly
  * Designed by Antigravity AI - Google DeepMind
@@ -20,20 +20,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const getPath = (filename) => `./${filename}`;
 
-// Quintera Holdings Metallic Branding Logo
+// Quintera Holdings Premium Branding with Transparent Logo
 const starLogoSVG = `
-<div style="display: flex; align-items: center; gap: 10px;">
-  <img src="${getPath('logo-fin.png')}" alt="Quintera Logo" style="height: 48px; width: auto; ">
-  
+<div class="brand-lockup">
+  <img class="brand-mark" src="${getPath('quintera-q-mark.png')}" alt="Quintera Holdings Q mark">
+  <div class="brand-copy">
+    <span class="brand-wordmark">QUINTERA</span>
+    <span class="brand-submark">HOLDINGS</span>
+    <span class="brand-divider"></span>
+    <span class="brand-tagline">Vision | Integrity | Impact</span>
+  </div>
 </div>
 `;
 
-// Footer Logo: Quintera Holdings
+// Footer Logo: Quintera Holdings with Transparent Logo
 const starFooterLogo1 = `
-<div style="text-align: center; margin-top: 15px;">
-  <img src="${getPath('logo.png')}" alt="Quintera Logo" style="height: 60px; width: auto; border-radius: 4px; margin-bottom: 8px;">
-  <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-light); font-family: 'Outfit', sans-serif; letter-spacing: 1px;">QUINTERA</div>
-  <div style="font-size: 0.75rem; color: var(--secondary-color); font-weight: 600; letter-spacing: 2px; margin-top: 2px;">VISION | INTEGRITY | IMPACT</div>
+<div style="text-align: center; padding: 20px 15px; background: linear-gradient(145deg, #111118, #1a1a2e); border-radius: 12px; border: 1px solid rgba(181, 139, 66, 0.12); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); position: relative; overflow: hidden;">
+  <div style="position: absolute; top: -30%; right: -20%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(181, 139, 66, 0.03) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+  <div style="position: absolute; bottom: -20%; left: -20%; width: 80px; height: 80px; background: radial-gradient(circle, rgba(212, 175, 55, 0.02) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+  
+  <img src="${getPath('Quintera Transparent.png')}" alt="Quintera Holdings" style="height: 60px; width: auto; margin-bottom: 8px; filter: drop-shadow(0 4px 12px rgba(181, 139, 66, 0.2));">
+  
+  <div style="font-weight: 900; font-size: 1.4rem; color: #ffffff; font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; letter-spacing: 4px; background: linear-gradient(180deg, #ffffff 30%, #b8b8c8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">QUINTERA</div>
+  <div style="font-size: 0.6rem; color: rgba(181, 139, 66, 0.6); font-weight: 400; letter-spacing: 8px; text-transform: uppercase; margin-top: 2px; -webkit-text-fill-color: rgba(181, 139, 66, 0.6); font-family: 'Outfit', sans-serif;">HOLDINGS</div>
+  
+  <div style="width: 40px; height: 2px; background: linear-gradient(90deg, transparent, rgba(181, 139, 66, 0.3), transparent); margin: 12px auto;"></div>
+  
+  <div style="display: flex; justify-content: center; gap: 14px; font-size: 0.7rem; font-weight: 600; letter-spacing: 2.5px; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; flex-wrap: wrap; font-family: 'Playfair Display', Georgia, serif;">
+    <span>VISION</span>
+    <span style="color: rgba(181, 139, 66, 0.3);">|</span>
+    <span>INTEGRITY</span>
+    <span style="color: rgba(181, 139, 66, 0.3);">|</span>
+    <span>IMPACT</span>
+  </div>
 </div>
 `;
 
@@ -60,10 +79,10 @@ function injectHeader() {
         <div class="top-header">
             <div class="container-fluid top-header-row">
                 <div class="top-links">
-                    <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292 <span style="background-color: var(--secondary-color); color: var(--primary-color); padding: 2px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 2px; margin-left: 5px;">Get Started</span></a>
+                    <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292 <span style="background: linear-gradient(145deg, #b58b42, #d4af37); color: #0a0a0f; padding: 2px 10px; font-size: 0.65rem; font-weight: 800; border-radius: 3px; margin-left: 5px; letter-spacing: 0.5px;">Get Started</span></a>
                     <a href="#" id="header-live-chat-link"><i class="fas fa-comment-dots" style="margin-right: 4px;"></i> LIVE CHAT</a>
                     <a href="${getPath('contact-us.html')}"><i class="fas fa-file-invoice-dollar" style="margin-right: 4px;"></i> POLICY SERVICES</a>
-                    <span style="color: var(--text-light); opacity: 0.8; font-size: 0.8rem; margin-left: 12px; font-weight: 600; letter-spacing: 1px;">VISION | INTEGRITY | IMPACT</span>
+                    <span style="color: var(--text-light); opacity: 0.5; font-size: 0.7rem; margin-left: 12px; font-weight: 600; letter-spacing: 2px; font-family: 'Playfair Display', Georgia, serif;">VISION | INTEGRITY | IMPACT</span>
                 </div>
                 <div class="social-links" style="display: flex; align-items: center; gap: 10px;">
                     <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -123,39 +142,29 @@ function injectFooter() {
         <footer>
             <div class="container-fluid footer-grid">
 
-                <!-- Column 2: QUINTERA LOCATIONS -->
-                <div class="footer-col">
-                    <h4>QUINTERA OFFICE</h4>
-                    <ul style="font-size: 0.85rem; line-height: 1.4;">
-                        <li style="margin-bottom: 10px;">
-                            <strong>Address - 2009 Embassy cr Charlotte NC 28213</strong><br>
-                            
-                        </li>
-                       
-                    </ul>
-                </div>
+               
 
                 <!-- Column 3: QUICK LINKS -->
                 <div class="footer-col">
-                    <h4 style="">QUICK LINKS</h4>
+                    <h4 style="color: rgba(181, 139, 66, 0.8); letter-spacing: 2px; font-family: 'Outfit', sans-serif;">QUICK LINKS</h4>
                     <ul>
-                        <li><a href="${getPath('about-us.html')}">About Us</a></li>
-                        <li><a href="${getPath('contact-us.html')}">Contact Us</a></li>
-                        <li><a href="${getPath('claims.html')}">Claims Help</a></li>
-                        <li><a href="${getPath('contact-us.html')}">Ask Us Anything</a></li>
-                        <li><a href="${getPath('contact-us.html')}">Advisor Resource Center</a></li>
+                        <li><a href="${getPath('about-us.html')}" style="font-family: 'Outfit', sans-serif;">About Us</a></li>
+                        <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Contact Us</a></li>
+                        <li><a href="${getPath('claims.html')}" style="font-family: 'Outfit', sans-serif;">Claims Help</a></li>
+                        <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Ask Us Anything</a></li>
+                        <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Advisor Resource Center</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 5: SEARCH & LOGOS -->
                 <div class="footer-col">
-                    <h4>SEARCH</h4>
+                    <h4 style="color: rgba(181, 139, 66, 0.8); letter-spacing: 2px; font-family: 'Outfit', sans-serif;">SEARCH</h4>
                     <form class="searchform" style="position: relative; margin-bottom: 30px;">
-                        <input type="text" name="s" placeholder="Search..." style="width: 100%; padding: 10px 40px 10px 15px; border-radius: 4px; border: 1px solid #cbd5e1; background-color: #f8fafc; color: var(--primary-color); outline: none;">
-                        <button type="submit" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--primary-color); cursor: pointer;"><i class="fas fa-search"></i></button>
+                        <input type="text" name="s" placeholder="Search..." style="width: 100%; padding: 10px 40px 10px 15px; border-radius: 4px; border: 1px solid rgba(181, 139, 66, 0.15); background-color: #f8fafc; color: var(--primary-color); outline: none; transition: border-color 0.3s ease; font-family: 'Outfit', sans-serif;">
+                        <button type="submit" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #b58b42; cursor: pointer; transition: color 0.3s ease;"><i class="fas fa-search"></i></button>
                     </form>
                     
-                    <div style="background-color: var(--primary-color); border: 1px solid var(--border-color); padding: 15px; border-radius: 8px; display: inline-block; width: 100%; text-align: center; box-shadow: var(--shadow-sm);">
+                    <div style="background-color: var(--primary-color); border: 1px solid rgba(181, 139, 66, 0.1); padding: 15px; border-radius: 8px; display: inline-block; width: 100%; text-align: center; box-shadow: var(--shadow-sm);">
                         ${starFooterLogo1}
                     </div>
                 </div>
@@ -163,12 +172,12 @@ function injectFooter() {
             
             <div class="footer-bottom-dark">
                 <div class="container-fluid footer-bottom">
-                    <p>&copy; 2026 Quintera | All Rights Reserved | sales@quintera.us | 980-776-5292 | 2009 Embassy cr Charlotte NC 28213 </p>
+                    <p style="font-size: 0.8rem; opacity: 0.7; font-family: 'Outfit', sans-serif;">&copy; 2026 <strong style="color: rgba(181, 139, 66, 0.8); font-family: 'Playfair Display', Georgia, serif;">Quintera</strong> Holdings | All Rights Reserved | sales@quintera.us | 980-776-5292 | 2009 Embassy Ct, Charlotte, NC 28213</p>
                     <div class="social-icons" style="font-size: 1.2rem; display: flex; gap: 15px; justify-content: center; opacity: 0.8;">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" style="transition: color 0.3s ease;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="transition: color 0.3s ease;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="transition: color 0.3s ease;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="transition: color 0.3s ease;"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -185,11 +194,11 @@ function injectCookieBanner() {
     banner.className = "cookie-banner";
     banner.id = "cookie-banner";
     banner.innerHTML = `
-        <h4 style="margin-bottom: 8px;"><i class="fas fa-cookie-bite"></i> Cookie Consent</h4>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;">We use cookies to improve your experience on our site. By using our site, you consent to cookies. Please read our Cookie Policy.</p>
+        <h4 style="margin-bottom: 8px; color: rgba(181, 139, 66, 0.9); font-family: 'Playfair Display', Georgia, serif;"><i class="fas fa-cookie-bite" style="color: #b58b42;"></i> Cookie Consent</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px; font-family: 'Outfit', sans-serif;">We use cookies to improve your experience on our site. By using our site, you consent to cookies. Please read our Cookie Policy.</p>
         <div class="cookie-actions">
-            <button class="btn btn-outline btn-sm" id="cookie-settings-btn" onclick="alert('Cookie Settings details (Dummy).')">Preferences</button>
-            <button class="btn btn-primary btn-sm" id="cookie-accept-btn">Accept All</button>
+            <button class="btn btn-outline btn-sm" id="cookie-settings-btn" onclick="alert('Cookie Settings details (Dummy).')" style="font-family: 'Outfit', sans-serif;">Preferences</button>
+            <button class="btn btn-primary btn-sm" id="cookie-accept-btn" style="background: linear-gradient(145deg, #b58b42, #d4af37); border: none; color: #0a0a0f; font-weight: 700; font-family: 'Outfit', sans-serif;">Accept All</button>
         </div>
     `;
 
@@ -261,7 +270,7 @@ function setupAccordion() {
 }
 
 function triggerEmailReflect(subject, bodyData) {
-    let emailBody = "Hello,\n\nHere are the details from the submission on Quintera:\n\n";
+    let emailBody = "Hello,\n\nHere are the details from the submission on Quintera Holdings:\n\n";
     for (const [key, val] of Object.entries(bodyData)) {
         emailBody += `• ${key}: ${val}\n`;
     }
@@ -312,7 +321,7 @@ function setupContactForm() {
         overlay.className = "success-overlay";
         overlay.innerHTML = `
             <div class="success-box" style="text-align: center; max-width: 500px;">
-                <div class="loading-spinner" style="border: 4px solid rgba(181,139,66,0.1); border-left-color: var(--secondary-color); border-radius: 50%; width: 40px; height: 40px; margin: 0 auto 20px; animation: spin 1s linear infinite;"></div>
+                <div class="loading-spinner" style="border: 4px solid rgba(181,139,66,0.1); border-left-color: #b58b42; border-radius: 50%; width: 40px; height: 40px; margin: 0 auto 20px; animation: spin 1s linear infinite;"></div>
                 <h3 style="color: var(--text-light); font-family: 'Outfit', sans-serif;">Sending secure inquiry...</h3>
             </div>
         `;
@@ -345,7 +354,7 @@ function setupContactForm() {
                 if (data.success && data.previewUrl) {
                     previewButtonHTML = `
                     <div style="margin-top: 15px; margin-bottom: 20px; text-align: center;">
-                        <a href="${data.previewUrl}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <a href="${data.previewUrl}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(145deg, #b58b42, #d4af37); color: #0a0a0f; border: none; border-radius: 4px; font-family: 'Outfit', sans-serif;">
                             <i class="fas fa-envelope-open-text"></i> View Received Email (Ethereal)
                         </a>
                     </div>
@@ -353,14 +362,14 @@ function setupContactForm() {
                 }
 
                 successOverlay.innerHTML = `
-                <div class="success-box" style="text-align: left; max-width: 500px;">
-                    <div class="success-icon" style="text-align: center;"><i class="fas fa-check-circle"></i></div>
-                    <h2 style="margin-bottom: 12px; color: var(--primary-color); text-align: center;">Inquiry Transmitted!</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 16px; text-align: center;">
+                <div class="success-box" style="text-align: left; max-width: 500px; border-top: 3px solid #b58b42;">
+                    <div class="success-icon" style="text-align: center; color: #b58b42;"><i class="fas fa-check-circle"></i></div>
+                    <h2 style="margin-bottom: 12px; color: var(--primary-color); text-align: center; font-family: 'Playfair Display', Georgia, serif;">Inquiry Transmitted!</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 16px; text-align: center; font-family: 'Outfit', sans-serif;">
                         ${data.success ? 'Your message has been processed using Nodemailer. Ethereal Email successfully received the dispatch:' : 'Your message details:'}
                     </p>
                     
-                    <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 4px; margin-bottom: 16px; font-size: 0.9rem; color: #334155; line-height: 1.5;">
+                    <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 4px; margin-bottom: 16px; font-size: 0.9rem; color: #334155; line-height: 1.5; font-family: 'Outfit', sans-serif;">
                         <strong>• Name:</strong> ${nameVal}<br>
                         <strong>• Email:</strong> ${emailVal}<br>
                         <strong>• Phone:</strong> ${phoneVal}<br>
@@ -370,7 +379,7 @@ function setupContactForm() {
                     
                     ${previewButtonHTML}
                     
-                    <button class="btn btn-primary" id="success-close-btn" style="width: 100%;">Close Window</button>
+                    <button class="btn btn-primary" id="success-close-btn" style="width: 100%; background: linear-gradient(145deg, #b58b42, #d4af37); border: none; color: #0a0a0f; font-weight: 700; font-family: 'Outfit', sans-serif;">Close Window</button>
                 </div>
             `;
                 document.body.appendChild(successOverlay);
@@ -402,12 +411,12 @@ function setupContactForm() {
                 const successOverlay = document.createElement("div");
                 successOverlay.className = "success-overlay";
                 successOverlay.innerHTML = `
-                <div class="success-box" style="text-align: left; max-width: 500px;">
-                    <div class="success-icon" style="text-align: center;"><i class="fas fa-check-circle"></i></div>
-                    <h2 style="margin-bottom: 12px; color: var(--primary-color); text-align: center;">Request Prepared!</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 16px; text-align: center;">Thank you. A draft email has been prepared and opened in your email client:</p>
+                <div class="success-box" style="text-align: left; max-width: 500px; border-top: 3px solid #b58b42;">
+                    <div class="success-icon" style="text-align: center; color: #b58b42;"><i class="fas fa-check-circle"></i></div>
+                    <h2 style="margin-bottom: 12px; color: var(--primary-color); text-align: center; font-family: 'Playfair Display', Georgia, serif;">Request Prepared!</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 16px; text-align: center; font-family: 'Outfit', sans-serif;">Thank you. A draft email has been prepared and opened in your email client:</p>
                     
-                    <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 4px; margin-bottom: 24px; font-size: 0.9rem; color: #334155; line-height: 1.5;">
+                    <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 4px; margin-bottom: 24px; font-size: 0.9rem; color: #334155; line-height: 1.5; font-family: 'Outfit', sans-serif;">
                         <strong>• Name:</strong> ${nameVal}<br>
                         <strong>• Email:</strong> ${emailVal}<br>
                         <strong>• Phone:</strong> ${phoneVal}<br>
@@ -415,7 +424,7 @@ function setupContactForm() {
                         <strong>• Notes:</strong> ${msgVal}
                     </div>
                     
-                    <button class="btn btn-primary" id="success-close-btn" style="width: 100%;">Close Window</button>
+                    <button class="btn btn-primary" id="success-close-btn" style="width: 100%; background: linear-gradient(145deg, #b58b42, #d4af37); border: none; color: #0a0a0f; font-weight: 700; font-family: 'Outfit', sans-serif;">Close Window</button>
                 </div>
             `;
                 document.body.appendChild(successOverlay);
@@ -454,24 +463,24 @@ function initLiveChat() {
     // Inject chat container markup
     const chatContainer = document.createElement("div");
     chatContainer.innerHTML = `
-        <div id="chat-launcher" class="chat-launcher">
+        <div id="chat-launcher" class="chat-launcher" style="background: linear-gradient(145deg, #b58b42, #d4af37); color: #0a0a0f;">
             <i class="fas fa-comments"></i>
         </div>
         <div id="chat-window" class="chat-window">
-            <div class="chat-header">
+            <div class="chat-header" style="background: linear-gradient(145deg, #b58b42, #d4af37); color: #0a0a0f; font-family: 'Outfit', sans-serif; font-weight: 700;">
                 <span><i class="fas fa-headset" style="margin-right: 8px;"></i> Quintera Live Support</span>
-                <button id="chat-close" class="chat-close">&times;</button>
+                <button id="chat-close" class="chat-close" style="color: #0a0a0f;">&times;</button>
             </div>
-            <div class="chat-body" id="chat-body">
+            <div class="chat-body" id="chat-body" style="font-family: 'Outfit', sans-serif;">
                 <!-- Messages dynamic thread -->
             </div>
             <div class="chat-footer">
                 <button class="chat-attach"><i class="fas fa-paperclip"></i></button>
-                <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
-                <button id="chat-send" class="chat-send"><i class="fas fa-paper-plane"></i></button>
+                <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off" style="font-family: 'Outfit', sans-serif;">
+                <button id="chat-send" class="chat-send" style="background: linear-gradient(145deg, #b58b42, #d4af37); color: #0a0a0f; font-family: 'Outfit', sans-serif;"><i class="fas fa-paper-plane"></i></button>
             </div>
-            <div style="font-size: 0.65rem; color: #94a3b8; text-align: center; padding-bottom: 8px; background-color: #ffffff; border-top: 1px solid #f1f5f9;">
-                powered by <strong>Star Virtual Agents</strong>
+            <div style="font-size: 0.6rem; color: #94a3b8; text-align: center; padding: 6px 0; background-color: #ffffff; border-top: 1px solid #f1f5f9; font-family: 'Outfit', sans-serif;">
+                powered by <strong style="color: #b58b42; font-family: 'Playfair Display', Georgia, serif;">Quintera</strong> Virtual Agents
             </div>
         </div>
     `;
@@ -534,6 +543,10 @@ function initLiveChat() {
     function appendMessage(text, sender) {
         const msgDiv = document.createElement("div");
         msgDiv.className = `chat-msg ${sender}`;
+        if (sender === "bot") {
+            msgDiv.style.borderLeft = "3px solid #b58b42";
+        }
+        msgDiv.style.fontFamily = "'Outfit', sans-serif";
         msgDiv.innerHTML = text;
         chatBody.appendChild(msgDiv);
         chatBody.scrollTop = chatBody.scrollHeight;
@@ -541,15 +554,16 @@ function initLiveChat() {
 
     function showMainMenu() {
         const greeting = `
-            Welcome to Quintera Holdings Live Support! For quick responses to your queries, please select the option that best connects with your request.<br><br>
+            <strong style="color: #b58b42; font-family: 'Playfair Display', Georgia, serif;">✦ Quintera Holdings Live Support ✦</strong><br><br>
+            Welcome! For quick responses to your queries, please select the option that best connects with your request.<br><br>
             Please note that you may type <strong>0</strong> at any time to return to this main menu.<br><br>
             Using your keypad, please select/type the option:<br>
             <div class="chat-msg-options">
-                <button class="chat-msg-option-btn" onclick="window.triggerChatOption('1')">1) Services </button>
-                <button class="chat-msg-option-btn" onclick="window.triggerChatOption('2')">2) Contact Us Form</button>
-                <button class="chat-msg-option-btn" onclick="window.triggerChatOption('3')">3) Quintera Offices & Hours</button>
-                <button class="chat-msg-option-btn" onclick="window.triggerChatOption('4')">4) About Quintera</button>
-                <button class="chat-msg-option-btn" onclick="window.triggerChatOption('5')">5) Speak to an Advisor / WhatsApp</button>
+                <button class="chat-msg-option-btn" onclick="window.triggerChatOption('1')" style="border-color: #b58b42; color: #b58b42; font-family: 'Outfit', sans-serif;">1) Services</button>
+                <button class="chat-msg-option-btn" onclick="window.triggerChatOption('2')" style="border-color: #b58b42; color: #b58b42; font-family: 'Outfit', sans-serif;">2) Contact Us Form</button>
+                <button class="chat-msg-option-btn" onclick="window.triggerChatOption('3')" style="border-color: #b58b42; color: #b58b42; font-family: 'Outfit', sans-serif;">3) Offices & Hours</button>
+                <button class="chat-msg-option-btn" onclick="window.triggerChatOption('4')" style="border-color: #b58b42; color: #b58b42; font-family: 'Outfit', sans-serif;">4) About Quintera</button>
+                <button class="chat-msg-option-btn" onclick="window.triggerChatOption('5')" style="border-color: #b58b42; color: #b58b42; font-family: 'Outfit', sans-serif;">5) Speak to an Advisor</button>
             </div>
         `;
         appendMessage(greeting, "bot");
@@ -606,7 +620,7 @@ function initLiveChat() {
             });
 
             appendMessage(
-                "<strong>✅ Request Logged & Reflected!</strong><br><br>" +
+                "<strong style='color: #b58b42; font-family: 'Playfair Display', Georgia, serif;'>✅ Request Logged & Reflected!</strong><br><br>" +
                 "Thank you. Your details have been successfully captured and a draft email has been automatically prepared in your email client:<br><br>" +
                 "• <strong>Name:</strong> " + name + "<br>" +
                 "• <strong>Email:</strong> " + email + "<br>" +
@@ -626,12 +640,12 @@ function initLiveChat() {
             case "services":
             case "portfolio":
                 appendMessage(
-                    "<strong>Quintera Services & Portfolios</strong>:<br>" +
+                    "<strong style='color: #b58b42; font-family: 'Playfair Display', Georgia, serif;'>Quintera Services & Portfolios</strong>:<br>" +
                     "Please select one of our core divisions below. The chatbot will navigate you directly to that section:<br><br>" +
                     "<div class='chat-msg-options'>" +
-                    "    <button class='chat-msg-option-btn' onclick='window.triggerChatOption(\"service_insurance\")'>Insurance Coverage</button>" +
-                    "    <button class='chat-msg-option-btn' onclick='window.triggerChatOption(\"service_realestate\")'>Real Estate Services</button>" +
-                    "    <button class='chat-msg-option-btn' onclick='window.triggerChatOption(\"service_advisory\")'>Advisory & Policy Services</button>" +
+                    "    <button class='chat-msg-option-btn' onclick='window.triggerChatOption(\"service_insurance\")' style='border-color: #b58b42; color: #b58b42; font-family: 'Outfit', sans-serif;'>Insurance Coverage</button>" +
+                    "    <button class='chat-msg-option-btn' onclick='window.triggerChatOption(\"service_realestate\")' style='border-color: #b58b42; color: #b58b42; font-family: 'Outfit', sans-serif;'>Real Estate Services</button>" +
+                    "    <button class='chat-msg-option-btn' onclick='window.triggerChatOption(\"service_advisory\")' style='border-color: #b58b42; color: #b58b42; font-family: 'Outfit', sans-serif;'>Advisory & Policy</button>" +
                     "</div>",
                     "bot"
                 );
@@ -667,7 +681,7 @@ function initLiveChat() {
             case "quintera offices & hours":
             case "offices":
             case "hours":
-                appendMessage("<strong>Quintera Offices & Hours</strong>:<br>• <strong>Main Office</strong>: 2009 Embassy cr Charlotte NC 28213<br>• <strong>Business Hours</strong>: Monday - Friday 8:00 AM - 8:00 PM (Sat-Sun Closed)<br>• <strong>Direct Phone</strong>: 980-776-5292<br>• Contact details available on our <a href='./contact-us.html'>Contact Us page</a>.", "bot");
+                appendMessage("<strong style='color: #b58b42; font-family: 'Playfair Display', Georgia, serif;'>Quintera Offices & Hours</strong>:<br>• <strong>Main Office</strong>: 2009 Embassy Ct, Charlotte, NC 28213<br>• <strong>Business Hours</strong>: Monday - Friday 8:00 AM - 8:00 PM (Sat-Sun Closed)<br>• <strong>Direct Phone</strong>: 980-776-5292<br>• Contact details available on our <a href='./contact-us.html' style='color: #b58b42;'>Contact Us page</a>.", "bot");
                 break;
             case "4":
             case "about quintera":
@@ -684,20 +698,20 @@ function initLiveChat() {
                 appendMessage(
                     "Would you like to speak to an advisor via WhatsApp or request a callback?<br><br>" +
                     "<div class='chat-msg-options'>" +
-                    "    <button class='chat-msg-option-btn' onclick='window.triggerChatOption(\"whatsapp\")'>WhatsApp</button>" +
-                    "    <button class='chat-msg-option-btn' onclick='window.triggerChatOption(\"callback_sub\")'>Request a Callback</button>" +
+                    "    <button class='chat-msg-option-btn' onclick='window.triggerChatOption(\"whatsapp\")' style='border-color: #b58b42; color: #b58b42; font-family: 'Outfit', sans-serif;'>WhatsApp</button>" +
+                    "    <button class='chat-msg-option-btn' onclick='window.triggerChatOption(\"callback_sub\")' style='border-color: #b58b42; color: #b58b42; font-family: 'Outfit', sans-serif;'>Request Callback</button>" +
                     "</div>",
                     "bot"
                 );
                 break;
             case "whatsapp":
-                appendMessage("Connecting you to our WhatsApp support line... <br><a href='https://wa.me/19807765292' target='_blank' class='btn btn-primary btn-sm' style='color:white; margin-top:8px; display:inline-block;'><i class='fab fa-whatsapp' style='margin-right:6px;'></i>Chat on WhatsApp</a>", "bot");
+                appendMessage("Connecting you to our WhatsApp support line... <br><a href='https://wa.me/19807765292' target='_blank' class='btn btn-primary btn-sm' style='background: linear-gradient(145deg, #b58b42, #d4af37); color: #0a0a0f; margin-top:8px; display:inline-block; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 700; font-family: 'Outfit', sans-serif;'><i class='fab fa-whatsapp' style='margin-right:6px;'></i>Chat on WhatsApp</a>", "bot");
                 break;
             case "callback_sub":
                 appendMessage("Please provide your telephone number and name in one message, and our representative will call you back shortly.", "bot");
                 break;
             case "agent":
-                appendMessage("📌 Our offices are now closed. To speak with an advisor, please restart this chat during our business hours of Monday to Friday- 8:00am to 8:00pm", "bot");
+                appendMessage("📌 Our offices are now closed. To speak with an advisor, please restart this chat during our business hours of Monday to Friday - 8:00am to 8:00pm", "bot");
                 break;
             default:
                 // Try to scan for keywords
@@ -824,8 +838,8 @@ function setupFooterSearch() {
             results.forEach(res => {
                 resultsHTML += `
                     <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 12px;">
-                        <h4 style="margin-bottom: 4px;"><a href="${getPath(res.url)}" style="color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 1.1rem;">${res.title}</a></h4>
-                        <p style="color: #64748b; font-size: 0.875rem; margin: 0; line-height: 1.4;">${res.desc}</p>
+                        <h4 style="margin-bottom: 4px; font-family: 'Playfair Display', Georgia, serif;"><a href="${getPath(res.url)}" style="color: #b58b42; font-weight: 700; text-decoration: none; font-size: 1.1rem;">${res.title}</a></h4>
+                        <p style="color: #64748b; font-size: 0.875rem; margin: 0; line-height: 1.4; font-family: 'Outfit', sans-serif;">${res.desc}</p>
                     </div>
                 `;
             });
@@ -834,21 +848,21 @@ function setupFooterSearch() {
             resultsHTML = `
                 <div style="text-align: center; margin-bottom: 24px; padding: 20px 0;">
                     <i class="fas fa-search-minus" style="font-size: 3rem; color: #94a3b8; margin-bottom: 16px;"></i>
-                    <p style="color: #64748b; margin: 0;">No search results match your query: "<strong>${query}</strong>". Please try again.</p>
+                    <p style="color: #64748b; margin: 0; font-family: 'Outfit', sans-serif;">No search results match your query: "<strong style="font-family: 'Playfair Display', Georgia, serif;">${query}</strong>". Please try again.</p>
                 </div>
             `;
         }
 
         overlay.innerHTML = `
-            <div class="success-box" style="text-align: left; max-width: 600px; width: 90%; max-height: 80vh; display: flex; flex-direction: column;">
-                <h2 style="margin-bottom: 8px; color: var(--primary-color);">Search Results</h2>
-                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Found ${results.length} page(s) containing "<strong>${query}</strong>":</p>
+            <div class="success-box" style="text-align: left; max-width: 600px; width: 90%; max-height: 80vh; display: flex; flex-direction: column; border-top: 3px solid #b58b42;">
+                <h2 style="margin-bottom: 8px; color: var(--primary-color); font-family: 'Playfair Display', Georgia, serif;">Search Results</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; font-family: 'Outfit', sans-serif;">Found ${results.length} page(s) containing "<strong style="color: #b58b42; font-family: 'Playfair Display', Georgia, serif;">${query}</strong>":</p>
                 
                 <div style="flex-grow: 1; overflow-y: auto; padding-right: 8px; margin-bottom: 16px;">
                     ${resultsHTML}
                 </div>
                 
-                <button class="btn btn-primary" id="search-close-btn" style="width: 100%; flex-shrink: 0;">Close Results</button>
+                <button class="btn btn-primary" id="search-close-btn" style="width: 100%; flex-shrink: 0; background: linear-gradient(145deg, #b58b42, #d4af37); border: none; color: #0a0a0f; font-weight: 700; font-family: 'Outfit', sans-serif;">Close Results</button>
             </div>
         `;
 

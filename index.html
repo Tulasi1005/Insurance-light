@@ -1,48 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Quintera</title>
-    <meta name="description" content="Quintera - Vision, Integrity, Impact. Providing personal lines, commercial coverage, real estate, policy management, and risk assessment services.">
+    <meta name="description"
+        content="Quintera - Vision, Integrity, Impact. Providing personal lines, commercial coverage, real estate, policy management, and risk assessment services.">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Core Stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./style.css">
     <style>
-        /* Banner/Slider Styles */
-        .slider-section {
+        /* Premium Carousel Styles */
+        .carousel-wrapper {
             position: relative;
-            height: 500px;
-            background-color: var(--primary-color);
+            width: 100%;
+            height: 600px;
             overflow: hidden;
+            background-color: var(--primary-color);
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 1;
         }
-        .slide-content {
-            text-align: center;
-            color: white;
-            z-index: 5;
+
+        .carousel-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            background: linear-gradient(90deg,
+                    rgba(11, 27, 43, 0.82) 0%,
+                    rgba(19, 40, 63, 0.65) 45%,
+                    rgba(11, 27, 43, 0.82) 100%);
+            z-index: 2;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+        }
+
+        .carousel-content {
+            position: relative;
+            z-index: 3;
             max-width: 800px;
-            padding: 0 20px;
+            padding: 45px 50px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(11, 27, 43, 0.94) 0%, rgba(19, 40, 63, 0.88) 100%);
+            border: 2px solid var(--secondary-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow-premium), 0 0 35px rgba(181, 139, 66, 0.25);
+            transform: translateY(20px);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+            opacity: 0;
         }
-        .slide-content h2 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--secondary-color);
-            margin-bottom: 12px;
-            font-family: 'Outfit', sans-serif;
-            letter-spacing: 2px;
+
+        .carousel-slide.active .carousel-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .logo-main {
+            font-family: 'Cinzel', serif;
+            font-size: 4.2rem;
+            font-weight: 700;
+            letter-spacing: 8px;
+            color: #dedfe4;
+            margin: 0;
+            line-height: 1.0;
             text-transform: uppercase;
         }
-        .slide-content p {
-            font-size: 1.25rem;
+
+        .logo-sub {
+            font-family: 'Cinzel', serif;
+            font-size: 2.0rem;
+            font-weight: 500;
+            letter-spacing: 12px;
+            color: var(--secondary-color);
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .logo-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px auto;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .logo-divider .divider-line {
+            flex: 1;
+            height: 1px;
+            background: var(--secondary-color);
+            opacity: 0.6;
+        }
+
+        .logo-divider svg {
+            display: block;
+        }
+
+        .logo-vision {
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            color: var(--secondary-color);
+            margin-top: 15px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .logo-vision .diamond {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        .carousel-content p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
             margin-bottom: 30px;
             line-height: 1.6;
-            opacity: 0.9;
+            color: #E2E8F0;
+        }
+
+        /* Light Mode Overrides for Carousel */
+        body.light-mode .carousel-slide::before {
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.65) 0%,
+                    rgba(255, 255, 255, 0.45) 100%);
+        }
+
+        body.light-mode .carousel-content {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 244, 248, 0.92) 100%);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 0 25px rgba(181, 139, 66, 0.15);
+        }
+
+        body.light-mode .logo-main {
+            color: #0B1B2B; /* Navy from logo */
+            text-shadow: none;
+        }
+
+        body.light-mode .logo-vision {
+            color: #0B1B2B; /* Navy from logo */
+        }
+
+        body.light-mode .carousel-content p {
+            color: #2D3138; /* Charcoal for readability */
+        }
+
+        /* Nav Controls */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(19, 40, 63, 0.5);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+            outline: none;
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .carousel-btn.prev {
+            left: 24px;
+        }
+
+        .carousel-btn.next {
+            right: 24px;
+        }
+
+        /* Dot Indicators */
+        .carousel-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .carousel-dot.active {
+            background-color: var(--secondary-color);
+            transform: scale(1.2);
+            border-color: var(--secondary-color);
         }
 
         /* Announcement Alert Bar */
@@ -58,6 +256,7 @@
             text-transform: uppercase;
             border-bottom: 2px solid var(--secondary-color);
         }
+
         .announcement-bar a {
             color: var(--primary-color);
             display: inline-flex;
@@ -65,22 +264,63 @@
             gap: 8px;
         }
 
-        /* Hero / Slider Mobile Responsiveness */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .slider-section {
-                height: 400px;
+            .carousel-wrapper {
+                height: auto;
+                min-height: 520px;
+                display: flex;
+                align-items: center;
             }
-            .slide-content h2 {
-                font-size: 1rem !important;
-                letter-spacing: 2px !important;
+
+            .carousel-content {
+                padding: 30px 20px !important;
+                margin: 15px !important;
+                max-width: calc(100% - 30px) !important;
+                border: 2px solid var(--secondary-color) !important;
+                background: linear-gradient(135deg, rgba(11, 27, 43, 0.96) 0%, rgba(19, 40, 63, 0.92) 100%) !important;
             }
-            .slide-content h1 {
+
+            .logo-main {
                 font-size: 2.2rem !important;
+                letter-spacing: 4px !important;
+            }
+
+            .logo-sub {
+                font-size: 1.1rem !important;
+                letter-spacing: 6px !important;
+                margin-top: 6px !important;
                 margin-bottom: 12px !important;
             }
-            .slide-content p {
-                font-size: 0.95rem !important;
+
+            .logo-divider {
+                max-width: 220px !important;
+                margin: 10px auto !important;
+            }
+
+            .logo-vision {
+                font-size: 0.75rem !important;
+                letter-spacing: 2px !important;
+                margin-top: 10px !important;
+                margin-bottom: 15px !important;
+            }
+
+            .logo-vision .diamond {
+                margin: 0 4px !important;
+                font-size: 0.7rem !important;
+            }
+
+            .carousel-content p {
+                font-size: 0.9rem !important;
                 margin-bottom: 20px !important;
+            }
+
+            body.light-mode .carousel-content {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 244, 248, 0.94) 100%) !important;
+            }
+
+            .carousel-btn {
+                display: none;
             }
         }
 
@@ -91,6 +331,7 @@
             text-align: center;
             border-bottom: 1px solid #e2e8f0;
         }
+
         .roadside-text-top {
             font-family: 'Outfit', sans-serif;
             font-weight: 700;
@@ -102,6 +343,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
         .roadside-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -109,6 +351,7 @@
             gap: 20px;
             margin-bottom: 24px;
         }
+
         .roadside-btn-red {
             background-color: var(--primary-color);
             color: var(--text-light);
@@ -126,12 +369,14 @@
             justify-content: center;
             transition: var(--transition);
         }
+
         .roadside-btn-red:hover {
             background-color: var(--secondary-color);
             color: var(--primary-color);
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
         }
+
         .roadside-text-bottom {
             font-family: 'Outfit', sans-serif;
             font-weight: 700;
@@ -140,8 +385,11 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
+
     </style>
 </head>
+
 <body>
 
     <!-- Header Section (Dynamic Injection) -->
@@ -149,24 +397,101 @@
 
     <!-- Announcement Alert Bar -->
     <div class="announcement-bar">
-        <a href="./contact-us.html"><i class="fas fa-bullhorn"></i> Contact an Advisor at Quintera Today!</a>
+        <a href="./contact-us.html"><i class="fas fa-bullhorn"></i> Click For Quote!</a>
     </div>
 
-    <!-- Hero / Slider Section -->
-    <section class="slider-section" style="background-image: linear-gradient(rgba(11,19,43,0.85), rgba(11,19,43,0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center;">
-        <div class="slide-content">
-            <h2 style="font-size: 1.5rem; letter-spacing: 4px; color: var(--secondary-color); margin-bottom: 8px;">Vision • Integrity • Impact</h2>
-            <h1 style="font-size: 3.5rem; font-weight: 800; color: white; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">QUINTERA HOLDINGS</h1>
-            <p>Providing professional insurance coverage, policy management, risk assessment, and commercial/residential real estate advisory services tailored to your needs.</p>
-            <a href="./contact-us.html" class="btn btn-secondary" style="padding: 14px 35px; font-size: 1rem; font-weight: 700;">Connect With Advisor</a>
+    <!-- Hero / Premium Carousel Section -->
+    <div class="carousel-wrapper">
+        <!-- Slide 1 -->
+        <div class="carousel-slide active"
+            style="background-image: url('https://images.unsplash.com/photo-1510519138101-570d1dca3d66?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZGFyayUyMGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D');">
+            <div class="carousel-content">
+                <h1 class="logo-main">QUINTERA</h1>
+                <h1 class="logo-sub">HOLDINGS</h1>
+                <div class="logo-divider">
+                    <div class="divider-line"></div>
+                    <svg class="divider-scroll" width="40" height="15" viewBox="0 0 40 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 2 C17.5 2, 16 4, 16 6 C16 9, 18.5 11, 20 11 C21.5 11, 24 9, 24 6 C24 4, 22.5 2, 20 2 Z" stroke="#B58B42" stroke-width="1.2" fill="none"/>
+                        <path d="M15 6 C12 6, 9 3, 6 6 C3 9, 0 6, 0 6" stroke="#B58B42" stroke-width="1.2" fill="none"/>
+                        <path d="M25 6 C28 6, 31 3, 34 6 C37 9, 40 6, 40 6" stroke="#B58B42" stroke-width="1.2" fill="none"/>
+                        <circle cx="20" cy="6" r="1.8" fill="#B58B42"/>
+                    </svg>
+                    <div class="divider-line"></div>
+                </div>
+                <h2 class="logo-vision">VISION <span class="diamond">⬥</span> INTEGRITY <span class="diamond">⬥</span> IMPACT</h2>
+                <p>Providing professional insurance coverage, policy management, risk assessment, and
+                    commercial/residential real estate advisory services tailored to your needs.</p>
+                <a href="./contact-us.html" class="btn btn-secondary"
+                    style="padding: 14px 40px; font-weight: 700; margin-top: 10px;">Request Advisor Consultation</a>
+            </div>
         </div>
-    </section>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide"
+            style="background-image: url('https://images.openai.com/static-rsc-4/oy6pftXKvaSN0YZ1P9JwRE22pBYreRL2wLbDVxHXeNzsMxLrdSJRC18cdTVmJCcpX9rVzR6bNClevHNEJ9ExQ__XLA3K9mEloeU9PoYc_-nCnGvc2MALu0rmiDYwuxTIdrQJlDKXO8bSieYp-BisHrmtgGcA04Uxxtf75HNDJG5C7XDq1E9Kp-Cw65JLet8-?purpose=inline');">
+            <div class="carousel-content">
+                <h1 class="logo-main">QUINTERA</h1>
+                <h1 class="logo-sub">HOLDINGS</h1>
+                <div class="logo-divider">
+                    <div class="divider-line"></div>
+                    <svg class="divider-scroll" width="40" height="15" viewBox="0 0 40 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 2 C17.5 2, 16 4, 16 6 C16 9, 18.5 11, 20 11 C21.5 11, 24 9, 24 6 C24 4, 22.5 2, 20 2 Z" stroke="#B58B42" stroke-width="1.2" fill="none"/>
+                        <path d="M15 6 C12 6, 9 3, 6 6 C3 9, 0 6, 0 6" stroke="#B58B42" stroke-width="1.2" fill="none"/>
+                        <path d="M25 6 C28 6, 31 3, 34 6 C37 9, 40 6, 40 6" stroke="#B58B42" stroke-width="1.2" fill="none"/>
+                        <circle cx="20" cy="6" r="1.8" fill="#B58B42"/>
+                    </svg>
+                    <div class="divider-line"></div>
+                </div>
+                <h2 class="logo-vision">VISION <span class="diamond">⬥</span> INTEGRITY <span class="diamond">⬥</span> IMPACT</h2>
+                <p>Providing professional insurance coverage, policy management, risk assessment, and
+                    commercial/residential real estate advisory services tailored to your needs.</p>
+                <a href="./contact-us.html" class="btn btn-secondary"
+                    style="padding: 14px 40px; font-weight: 700; margin-top: 10px;">Request Advisor Consultation</a>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide"
+            style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230624/pngtree-visualizing-the-journey-to-owning-a-home-3d-render-illustration-of-image_3675482.jpg');">
+            <div class="carousel-content">
+                <h1 class="logo-main">QUINTERA</h1>
+                <h1 class="logo-sub">HOLDINGS</h1>
+                <div class="logo-divider">
+                    <div class="divider-line"></div>
+                    <svg class="divider-scroll" width="40" height="15" viewBox="0 0 40 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 2 C17.5 2, 16 4, 16 6 C16 9, 18.5 11, 20 11 C21.5 11, 24 9, 24 6 C24 4, 22.5 2, 20 2 Z" stroke="#B58B42" stroke-width="1.2" fill="none"/>
+                        <path d="M15 6 C12 6, 9 3, 6 6 C3 9, 0 6, 0 6" stroke="#B58B42" stroke-width="1.2" fill="none"/>
+                        <path d="M25 6 C28 6, 31 3, 34 6 C37 9, 40 6, 40 6" stroke="#B58B42" stroke-width="1.2" fill="none"/>
+                        <circle cx="20" cy="6" r="1.8" fill="#B58B42"/>
+                    </svg>
+                    <div class="divider-line"></div>
+                </div>
+                <h2 class="logo-vision">VISION <span class="diamond">⬥</span> INTEGRITY <span class="diamond">⬥</span> IMPACT</h2>
+                <p>Providing professional insurance coverage, policy management, risk assessment, and
+                    commercial/residential real estate advisory services tailored to your needs.</p>
+                <a href="./contact-us.html" class="btn btn-secondary"
+                    style="padding: 14px 40px; font-weight: 700; margin-top: 10px;">Request Advisor Consultation</a>
+            </div>
+        </div>
+
+        <!-- Nav Buttons -->
+        <button class="carousel-btn prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+
+        <!-- Dot Indicators -->
+        <div class="carousel-dots">
+            <div class="carousel-dot active"></div>
+            <div class="carousel-dot"></div>
+            <div class="carousel-dot"></div>
+        </div>
+    </div>
 
     <!-- Specific Corporate Contact Banner -->
     <section class="roadside-assistance-box">
         <div class="container">
             <div class="roadside-text-top">
-                Are you a client or policyholder needing claims assistance, coverage evaluation, or real estate advisory?
+                Are you a client or policyholder needing claims assistance, coverage evaluation, or real estate
+                advisory?
             </div>
             <div class="roadside-buttons">
                 <a href="tel:980-776-5292" class="roadside-btn-red">
@@ -183,11 +508,14 @@
     </section>
 
     <!-- Services / Grid Section -->
-    <section class="section-padding" style="background-color: var(--primary-color); border-bottom: 1px solid var(--border-color);">
+    <section class="section-padding"
+        style="background-color: var(--primary-color); border-bottom: 1px solid var(--border-color);">
         <div class="container">
             <div class="text-center" style="margin-bottom: 40px;">
-                <p style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary-color); margin-bottom: 8px;">Advisory Portfolio</p>
-                <h2 style="font-size: 2.2rem; font-weight: 700; color: var(--text-light);">Our Core Services</h2>
+                <h3
+                    style="font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary-color); margin-bottom: 8px;">
+                    Advisory Portfolio</h3>
+                <h5 style="font-size: 1.85rem; font-weight: 700; color: var(--text-light);">Our Core Services</h5>
             </div>
 
             <!-- Grid of 5 Quintera Services Cards -->
@@ -196,61 +524,86 @@
                 <div class="home-card">
                     <div class="home-card-body">
                         <div class="home-card-img">
-                            <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=400&q=80" alt="Personal Lines">
+                            <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=400&q=80"
+                                alt="Personal Lines">
                         </div>
                         <h3>Personal Lines Coverage</h3>
-                        <p>Tailored homeowners, renters, auto, boat, and personal umbrella insurance plans designed to protect your personal assets.</p>
+                        <p style="font-size:1.15rem;">Tailored homeowners, renters, auto, boat, and personal umbrella insurance plans designed to
+                            protect your personal assets.</p>
                     </div>
-                    <a href="./contact-us.html?service=Personal%20Lines%20Coverage" class="btn-card-red" style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Request Quote</a>
+                    <a href="./contact-us.html?service=Personal%20Lines%20Coverage" class="btn-card-red"
+                        style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Request
+                        Quote</a>
                 </div>
 
                 <!-- Card 2: Commercial Coverage -->
                 <div class="home-card">
                     <div class="home-card-body">
                         <div class="home-card-img">
-                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Commercial Coverage">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80"
+                                alt="Commercial Coverage">
                         </div>
                         <h3>Commercial Coverage</h3>
-                        <p>Protect your business with workers' compensation, commercial properties, General liability, and fleet auto lines.</p>
+                        <p style="font-size:1.15rem;">Protect your business with workers' compensation, commercial properties, General liability,
+                            and fleet auto lines.</p>
                     </div>
-                    <a href="./contact-us.html?service=Commercial%20Coverage" class="btn-card-red" style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Request Quote</a>
+                    <a href="./contact-us.html?service=Commercial%20Coverage" class="btn-card-red"
+                        style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Request
+                        Quote</a>
+                </div>
+
+                
+
+                <!-- Card 4: Policy Management -->
+                <div class="home-card" style="grid-column: span 1;">
+                    <div class="home-card-body">
+                        <div class="home-card-img">
+                            <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=400&q=80"
+                                alt="Policy Management">
+                        </div>
+                        <h3>Policy Management</h3>
+                        <p style="font-size:1.15rem;">Handling all policy details, updates, claims assistance, and renewals to provide continuous
+                            protection and peace of mind.</p>
+                    </div>
+                    <a href="./contact-us.html?service=Policy%20Management" class="btn-card-red"
+                        style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Request
+                        Service</a>
+                </div>
+
+                
+                <!-- Card 5: Risk Assessment -->
+                <div class="home-card" style="grid-column: span 1;">
+                    <div class="home-card-body">
+                        <div class="home-card-img">
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=450&q=80"
+                                alt="Risk Assessment">
+                        </div>
+                        <h3>Risk Assessment</h3>
+                        <p style="font-size:1.15rem;">Evaluate your risk exposure, recommend policy limits, and customize umbrella coverage
+                            matching your unique situation.</p>
+                    </div>
+                    <a href="./contact-us.html?service=Risk%20Assessment" class="btn-card-red"
+                        style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Request
+                        Evaluation</a>
                 </div>
 
                 <!-- Card 3: Real Estate Services -->
                 <div class="home-card">
                     <div class="home-card-body">
                         <div class="home-card-img">
-                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80" alt="Real Estate Services">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80"
+                                alt="Real Estate Services">
                         </div>
                         <h3>Real Estate Services</h3>
-                        <p>Residential purchase/sales brokerage, commercial property representation, and professional tenant leasing services.</p>
+                        <p style="font-size:1.15rem;">Residential purchase/sales brokerage, commercial property representation, and professional
+                            tenant leasing services.</p>
                     </div>
-                    <a href="./contact-us.html?service=Residential%20and%20Commercial%20Real%20Estate%20Services" class="btn-card-red" style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Consult Advisor</a>
+                    <a href="./contact-us.html?service=Residential%20and%20Commercial%20Real%20Estate%20Services"
+                        class="btn-card-red"
+                        style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Consult
+                        Advisor</a>
                 </div>
 
-                <!-- Card 4: Policy Management -->
-                <div class="home-card" style="grid-column: span 1;">
-                    <div class="home-card-body">
-                        <div class="home-card-img">
-                            <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=400&q=80" alt="Policy Management">
-                        </div>
-                        <h3>Policy Management</h3>
-                        <p>Handling all policy details, updates, claims assistance, and renewals to provide continuous protection and peace of mind.</p>
-                    </div>
-                    <a href="./contact-us.html?service=Policy%20Management" class="btn-card-red" style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Request Service</a>
-                </div>
-
-                <!-- Card 5: Risk Assessment -->
-                <div class="home-card" style="grid-column: span 1;">
-                    <div class="home-card-body">
-                        <div class="home-card-img">
-                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80" alt="Risk Assessment">
-                        </div>
-                        <h3>Risk Assessment</h3>
-                        <p>Evaluate your risk exposure, recommend policy limits, and customize umbrella coverage matching your unique situation.</p>
-                    </div>
-                    <a href="./contact-us.html?service=Risk%20Assessment" class="btn-card-red" style="text-align: center; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; padding: 12px 0;">Request Evaluation</a>
-                </div>
             </div>
         </div>
     </section>
@@ -265,7 +618,8 @@
                 <div class="upgrade-content-col">
                     <h2>Upgrade your insurance advisory experience with Quintera</h2>
                     <p class="upgrade-quote">
-                        "At Quintera, our values as a team are aligned to making you, our valued clients, not only happy but have an amazing advisory experience." - Tammara Glaves-Hucey, Managing Director, Quintera
+                        "At Quintera, our values as a team are aligned to making you, our valued clients, not only happy
+                        but have an amazing advisory experience." - Quintera
                     </p>
                 </div>
             </div>
@@ -280,5 +634,52 @@
 
     <!-- Layout Handler Script -->
     <script src="./layout.js"></script>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".carousel-slide");
+        const dots = document.querySelectorAll(".carousel-dot");
+        let slideInterval;
+
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            else if (index < 0) currentSlide = slides.length - 1;
+            else currentSlide = index;
+
+            slides.forEach((slide, i) => {
+                if (i === currentSlide) {
+                    slide.classList.add("active");
+                    dots[i].classList.add("active");
+                } else {
+                    slide.classList.remove("active");
+                    dots[i].classList.remove("active");
+                }
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Bind events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                showSlide(index);
+                resetInterval();
+            });
+        });
+
+        // Start autoplay
+        slideInterval = setInterval(nextSlide, 5000);
+    </script>
 </body>
+
 </html>

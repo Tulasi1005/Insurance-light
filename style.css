@@ -9,7 +9,7 @@
     /* Brand Colors (Midnight Blue & Premium Gold) */
     --primary-color: #0B1B2B;        /* Primary Background - Deep Navy */
     --primary-light: #13283F;        /* Secondary Background - Midnight Blue */
-    --secondary-color: #B58B42;      /* Primary Accent - Metallic Gold */
+    --secondary-color: #e9ae4a;      /* Primary Accent - Metallic Gold */
     --secondary-hover: #9c732d;      /* Gold Hover */
     --accent-color: #C5C8CE;         /* Secondary Accent - Silver */
     --danger-color: #ff3333;
@@ -262,21 +262,69 @@ header {
     align-items: center;
 }
 
-.logo img {
-    height: 48px;
+.brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    height: 52px;
+    width: auto;
     display: block;
+    filter: drop-shadow(0 2px 8px rgba(181, 139, 66, 0.25));
 }
 
-.header-logo-text {
-    font-weight: 800;
+.brand-copy {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.brand-wordmark {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
     font-size: 1.5rem;
-    font-family: 'Outfit', sans-serif;
-    letter-spacing: 1px;
-    color: var(--secondary-color);
+    letter-spacing: 2px;
+    color: #d8dae2; /* Gray/Silver in dark mode */
+    line-height: 0.95;
+    margin: 0;
 }
 
-body.light-mode .header-logo-text {
-    color: var(--text-light);
+.brand-submark {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 5px;
+    color: var(--secondary-color); /* Gold in both modes */
+    line-height: 1.1;
+    margin-top: 2px;
+}
+
+.brand-divider {
+    height: 1px;
+    background: linear-gradient(90deg, var(--secondary-color), transparent);
+    width: 65px;
+    margin: 4px 0;
+    opacity: 0.7;
+}
+
+.brand-tagline {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 0.46rem;
+    letter-spacing: 1.8px;
+    color: var(--text-light); /* White in dark mode */
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+body.light-mode .brand-wordmark {
+    color: #0B1B2B; /* Navy in light mode */
+}
+
+body.light-mode .brand-tagline {
+    color: #0B1B2B; /* Navy in light mode */
 }
 
 .nav-links {
@@ -1161,8 +1209,16 @@ footer {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
 
 @media (max-width: 992px) {

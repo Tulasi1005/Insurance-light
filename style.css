@@ -278,7 +278,8 @@ header {
 .brand-copy {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    align-items: center; /* Center horizontally inside flex column */
+    text-align: center;
 }
 
 .brand-wordmark {

@@ -184,7 +184,6 @@ function injectFooter() {
                     <ul>
                         <li><a href="${getPath('about-us.html')}" style="font-family: 'Outfit', sans-serif;">About Us</a></li>
                         <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Contact Us</a></li>
-                        <li><a href="${getPath('claims.html')}" style="font-family: 'Outfit', sans-serif;">Claims Help</a></li>
                         <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Ask Us Anything</a></li>
                         <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Advisor Resource Center</a></li>
                     </ul>
@@ -310,7 +309,7 @@ function triggerEmailReflect(subject, bodyData) {
     }
     emailBody += "\nBest Regards,\nQuintera Support Team\n";
 
-    const mailtoUrl = `mailto:tulasilaxmi.mandala@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoUrl = `mailto:sales@quintera.us?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
 
     const mailLink = document.createElement("a");
     mailLink.href = mailtoUrl;

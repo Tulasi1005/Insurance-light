@@ -44,8 +44,11 @@
             align-items: center;
             justify-content: center;
             z-index: 1;
+            /* Added brightness filter to make images brighter */
+            filter: brightness(1.15) contrast(1.05);
         }
 
+        /* Removed dark overlay and using a much lighter one */
         .carousel-slide::before {
             content: '';
             position: absolute;
@@ -54,10 +57,11 @@
             width: 100%;
             height: 100%;
             inset: 0;
+            /* Very light overlay to keep images bright */
             background: linear-gradient(90deg,
-                    rgba(11, 27, 43, 0.82) 0%,
-                    rgba(19, 40, 63, 0.65) 45%,
-                    rgba(11, 27, 43, 0.82) 100%);
+                    rgba(255, 255, 255, 0.08) 0%,
+                    rgba(255, 255, 255, 0.03) 45%,
+                    rgba(255, 255, 255, 0.08) 100%);
             z-index: 2;
         }
 
@@ -157,10 +161,14 @@
         }
 
         /* Light Mode Overrides for Carousel */
+        body.light-mode .carousel-slide {
+            filter: brightness(1.2) contrast(1.05);
+        }
+
         body.light-mode .carousel-slide::before {
             background: linear-gradient(135deg,
-                    rgba(255, 255, 255, 0.65) 0%,
-                    rgba(255, 255, 255, 0.45) 100%);
+                    rgba(255, 255, 255, 0.05) 0%,
+                    rgba(255, 255, 255, 0.02) 100%);
         }
 
         body.light-mode .carousel-content {
@@ -169,16 +177,19 @@
         }
 
         body.light-mode .logo-main {
-            color: #0B1B2B; /* Navy from logo */
+            color: #0B1B2B;
+            /* Navy from logo */
             text-shadow: none;
         }
 
         body.light-mode .logo-vision {
-            color: #0B1B2B; /* Navy from logo */
+            color: #0B1B2B;
+            /* Navy from logo */
         }
 
         body.light-mode .carousel-content p {
-            color: #2D3138; /* Charcoal for readability */
+            color: #2D3138;
+            /* Charcoal for readability */
         }
 
         /* Nav Controls */
@@ -273,6 +284,10 @@
                 align-items: center;
             }
 
+            .carousel-slide {
+                filter: brightness(1.1) contrast(1.03);
+            }
+
             .carousel-content {
                 padding: 30px 20px !important;
                 margin: 15px !important;
@@ -313,10 +328,6 @@
             .carousel-content p {
                 font-size: 0.9rem !important;
                 margin-bottom: 20px !important;
-            }
-
-            body.light-mode .carousel-content {
-                background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 244, 248, 0.94) 100%) !important;
             }
 
             .carousel-btn {
@@ -385,8 +396,6 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
-
     </style>
 </head>
 
@@ -404,7 +413,7 @@
     <div class="carousel-wrapper">
         <!-- Slide 1 -->
         <div class="carousel-slide active"
-            style="background-image: url('https://images.unsplash.com/photo-1510519138101-570d1dca3d66?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZGFyayUyMGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D');">
+            style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80');">
             <div class="carousel-content">
                 <h1 class="logo-main">QUINTERA</h1>
                 <h1 class="logo-sub">HOLDINGS</h1>
@@ -419,16 +428,12 @@
                     <div class="divider-line"></div>
                 </div>
                 <h2 class="logo-vision">VISION <span class="diamond">⬥</span> INTEGRITY <span class="diamond">⬥</span> IMPACT</h2>
-                <p>Providing professional insurance coverage, policy management, risk assessment, and
-                    commercial/residential real estate advisory services tailored to your needs.</p>
-                <a href="./contact-us.html" class="btn btn-secondary"
-                    style="padding: 14px 40px; font-weight: 700; margin-top: 10px;">Request Advisor Consultation</a>
             </div>
         </div>
 
         <!-- Slide 2 -->
         <div class="carousel-slide"
-            style="background-image: url('https://images.openai.com/static-rsc-4/oy6pftXKvaSN0YZ1P9JwRE22pBYreRL2wLbDVxHXeNzsMxLrdSJRC18cdTVmJCcpX9rVzR6bNClevHNEJ9ExQ__XLA3K9mEloeU9PoYc_-nCnGvc2MALu0rmiDYwuxTIdrQJlDKXO8bSieYp-BisHrmtgGcA04Uxxtf75HNDJG5C7XDq1E9Kp-Cw65JLet8-?purpose=inline');">
+            style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80');">
             <div class="carousel-content">
                 <h1 class="logo-main">QUINTERA</h1>
                 <h1 class="logo-sub">HOLDINGS</h1>
@@ -443,16 +448,12 @@
                     <div class="divider-line"></div>
                 </div>
                 <h2 class="logo-vision">VISION <span class="diamond">⬥</span> INTEGRITY <span class="diamond">⬥</span> IMPACT</h2>
-                <p>Providing professional insurance coverage, policy management, risk assessment, and
-                    commercial/residential real estate advisory services tailored to your needs.</p>
-                <a href="./contact-us.html" class="btn btn-secondary"
-                    style="padding: 14px 40px; font-weight: 700; margin-top: 10px;">Request Advisor Consultation</a>
             </div>
         </div>
 
         <!-- Slide 3 -->
         <div class="carousel-slide"
-            style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230624/pngtree-visualizing-the-journey-to-owning-a-home-3d-render-illustration-of-image_3675482.jpg');">
+            style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80');">
             <div class="carousel-content">
                 <h1 class="logo-main">QUINTERA</h1>
                 <h1 class="logo-sub">HOLDINGS</h1>
@@ -467,10 +468,6 @@
                     <div class="divider-line"></div>
                 </div>
                 <h2 class="logo-vision">VISION <span class="diamond">⬥</span> INTEGRITY <span class="diamond">⬥</span> IMPACT</h2>
-                <p>Providing professional insurance coverage, policy management, risk assessment, and
-                    commercial/residential real estate advisory services tailored to your needs.</p>
-                <a href="./contact-us.html" class="btn btn-secondary"
-                    style="padding: 14px 40px; font-weight: 700; margin-top: 10px;">Request Advisor Consultation</a>
             </div>
         </div>
 

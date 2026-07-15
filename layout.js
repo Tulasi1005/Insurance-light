@@ -112,8 +112,10 @@ function injectHeader() {
                                 <div class="megamenu-img">
                                     <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=400&q=80" alt="Insurance Coverage">
                                 </div>
-                                <p>Safeguard your assets with our custom personal lines and comprehensive commercial coverage. From home, auto, and marine policies to liability and fleet coverage, we tailor plans to fit your risks.</p>
-                                <a href="${getPath('services.html?filter=insurance')}" class="megamenu-more">Find out more</a>
+                                <ul>
+                                    <li><a href="${getPath('services.html?filter=insurance')}"><i class="fas fa-chevron-right"></i> Personal Lines Coverage</a></li>
+                                    <li><a href="${getPath('services.html?filter=insurance')}"><i class="fas fa-chevron-right"></i> Commercial Coverage</a></li>
+                                </ul>
                             </div>
                             <!-- Col 2: Real Estate Services -->
                             <div class="megamenu-col">
@@ -121,8 +123,11 @@ function injectHeader() {
                                 <div class="megamenu-img">
                                     <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" alt="Real Estate Services">
                                 </div>
-                                <p>Distinguished residential and commercial brokerage support. We guide clients through purchase transactions, sales advisory, leasing arrangements, and complex commercial tenant representation.</p>
-                                <a href="${getPath('services.html?filter=realestate')}" class="megamenu-more">Find out more</a>
+                                <ul>
+                                    <li><a href="${getPath('services.html?filter=realestate')}"><i class="fas fa-chevron-right"></i> Residential Sales & Purchase</a></li>
+                                    <li><a href="${getPath('services.html?filter=realestate')}"><i class="fas fa-chevron-right"></i> Commercial Property Brokerage</a></li>
+                                    <li><a href="${getPath('services.html?filter=realestate')}"><i class="fas fa-chevron-right"></i> Leasing & Tenant Negotiations</a></li>
+                                </ul>
                             </div>
                             <!-- Col 3: Advisory & Policy Management -->
                             <div class="megamenu-col">
@@ -130,8 +135,10 @@ function injectHeader() {
                                 <div class="megamenu-img">
                                     <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Advisory & Policy">
                                 </div>
-                                <p>Expert policy management, claim support, and risk exposure evaluations. We prepare coverage limit audits and prepare umbrella risk solutions to secure your long-term security.</p>
-                                <a href="${getPath('services.html?filter=advisory')}" class="megamenu-more">Find out more</a>
+                                <ul>
+                                    <li><a href="${getPath('services.html?filter=advisory')}"><i class="fas fa-chevron-right"></i> Policy Management</a></li>
+                                    <li><a href="${getPath('services.html?filter=advisory')}"><i class="fas fa-chevron-right"></i> Risk Assessment</a></li>
+                                </ul>
                             </div>
                             <!-- Col 4: Callout -->
                             <div class="megamenu-col-callout">
@@ -143,6 +150,7 @@ function injectHeader() {
                     </li>
                     <li><a href="${getPath('contact-us.html')}" class="nav-item ${getActive('contact-us.html')}">Forms</a></li>
                     <li><a href="${getPath('contact-us.html')}" class="nav-item ${getActive('contact-us.html')}">Contact Us</a></li>
+                    <li><a href="${getPath('regional-partners.html')}" class="nav-item ${getActive('regional-partners.html')}">Partners</a></li>
                     <!-- Mobile Theme Toggle -->
                     <li class="mobile-theme-toggle-li" style="width: 100%; margin-top: 15px;">
                         <button id="mobile-theme-toggle-btn" style="background: var(--primary-light); border: 1px solid var(--border-color); color: var(--text-light); cursor: pointer; padding: 12px 20px; border-radius: 20px; font-size: 0.9rem; font-family: 'Outfit', sans-serif; font-weight: 700; display: flex; align-items: center; gap: 8px; margin: 0 auto; width: 100%; justify-content: center;" onclick="window.toggleTheme()">

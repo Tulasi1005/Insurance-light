@@ -27,9 +27,11 @@ const starLogoSVG = `
   <div class="brand-copy">
     <span class="brand-wordmark">QUINTERA</span>
     <span class="brand-submark">HOLDINGS</span>
+    <span class="brand-divider"></span>
   </div>
 </div>
 `;
+
 
 // Footer Logo: Quintera Holdings with Transparent Logo
 const starFooterLogo1 = `
@@ -37,20 +39,9 @@ const starFooterLogo1 = `
   <div style="position: absolute; top: -30%; right: -20%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(181, 139, 66, 0.03) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
   <div style="position: absolute; bottom: -20%; left: -20%; width: 80px; height: 80px; background: radial-gradient(circle, rgba(212, 175, 55, 0.02) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
   
-  <img src="${getPath('logo.png')}" alt="Quintera Holdings" style="height: 60px; width: auto; margin-bottom: 8px; filter: drop-shadow(0 4px 12px rgba(181, 139, 66, 0.2));">
+  <img src="${getPath('logo-fin.png')}" alt="Quintera Holdings" style="height: 100px; width: auto; margin-bottom: 8px; filter: drop-shadow(0 4px 12px rgba(181, 139, 66, 0.2));">
   
-  <div style="font-weight: 900; font-size: 1.4rem; color: #ffffff; font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; letter-spacing: 4px; background: linear-gradient(180deg, #ffffff 30%, #b8b8c8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">QUINTERA</div>
-  <div style="font-size: 0.6rem; color: rgba(181, 139, 66, 0.6); font-weight: 400; letter-spacing: 8px; text-transform: uppercase; margin-top: 2px; -webkit-text-fill-color: rgba(181, 139, 66, 0.6); font-family: 'Outfit', sans-serif;">HOLDINGS</div>
   
-  <div style="width: 40px; height: 2px; background: linear-gradient(90deg, transparent, rgba(181, 139, 66, 0.3), transparent); margin: 12px auto;"></div>
-  
-  <div style="display: flex; justify-content: center; gap: 14px; font-size: 0.7rem; font-weight: 600; letter-spacing: 2.5px; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; flex-wrap: wrap; font-family: 'Playfair Display', Georgia, serif;">
-    <span>VISION</span>
-    <span style="color: rgba(181, 139, 66, 0.3);">|</span>
-    <span>INTEGRITY</span>
-    <span style="color: rgba(181, 139, 66, 0.3);">|</span>
-    <span>IMPACT</span>
-  </div>
 </div>
 `;
 
@@ -77,11 +68,9 @@ function injectHeader() {
         <div class="top-header">
             <div class="container-fluid top-header-row">
                 <div class="top-links">
-
                     <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292</a>
                     <a href="#" id="header-live-chat-link"><i class="fas fa-comment-dots" style="margin-right: 4px;"></i> LIVE CHAT</a>
                     <a href="${getPath('services.html')}"><i class="fas fa-file-invoice-dollar" style="margin-right: 4px;"></i> POLICY SERVICES</a>
-
                 </div>
                 <div class="social-links" style="display: flex; align-items: center; gap: 10px;">
                     <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -114,10 +103,47 @@ function injectHeader() {
                 <ul class="nav-links" id="nav-menu">
                     <li><a href="${getPath('index.html')}" class="nav-item ${getActive('index.html')}">Home</a></li>
                     <li><a href="${getPath('about-us.html')}" class="nav-item ${getActive('about-us.html')}">About Us</a></li>
-                    <li><a href="${getPath('services.html')}" class="nav-item ${getActive('services.html')}">Services</a></li>
-                    <li><a href="${getPath('contact-us.html')}" class="nav-item">Forms</a></li>
+                    <li class="dropdown megamenu">
+                        <a href="${getPath('services.html')}" class="nav-item ${getActive('services.html')}">Services <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 4px; vertical-align: middle;"></i></a>
+                        <div class="megamenu-panel">
+                            <!-- Col 1: Insurance Coverage -->
+                            <div class="megamenu-col">
+                                <h4>Insurance Coverage</h4>
+                                <div class="megamenu-img">
+                                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=400&q=80" alt="Insurance Coverage">
+                                </div>
+                                <p>Safeguard your assets with our custom personal lines and comprehensive commercial coverage. From home, auto, and marine policies to liability and fleet coverage, we tailor plans to fit your risks.</p>
+                                <a href="${getPath('services.html?filter=insurance')}" class="megamenu-more">Find out more</a>
+                            </div>
+                            <!-- Col 2: Real Estate Services -->
+                            <div class="megamenu-col">
+                                <h4>Real Estate Services <span class="badge-red">specialist</span></h4>
+                                <div class="megamenu-img">
+                                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" alt="Real Estate Services">
+                                </div>
+                                <p>Distinguished residential and commercial brokerage support. We guide clients through purchase transactions, sales advisory, leasing arrangements, and complex commercial tenant representation.</p>
+                                <a href="${getPath('services.html?filter=realestate')}" class="megamenu-more">Find out more</a>
+                            </div>
+                            <!-- Col 3: Advisory & Policy Management -->
+                            <div class="megamenu-col">
+                                <h4>Advisory & Policy</h4>
+                                <div class="megamenu-img">
+                                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Advisory & Policy">
+                                </div>
+                                <p>Expert policy management, claim support, and risk exposure evaluations. We prepare coverage limit audits and prepare umbrella risk solutions to secure your long-term security.</p>
+                                <a href="${getPath('services.html?filter=advisory')}" class="megamenu-more">Find out more</a>
+                            </div>
+                            <!-- Col 4: Callout -->
+                            <div class="megamenu-col-callout">
+                                <h3>Reasonable and Reliable Coverage.</h3>
+                                <p>Reasonable and reliable coverage, Quintera Holdings has an insurance package based on your needs! In a rush? Secure coverage with us in as little as 10 minutes.</p>
+                                <a href="${getPath('contact-us.html')}" class="megamenu-btn" style="color: white; text-decoration: none; display: block; text-align: center;">QUINTERA HOLDINGS</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="${getPath('contact-us.html')}" class="nav-item ${getActive('contact-us.html')}">Forms</a></li>
                     <li><a href="${getPath('contact-us.html')}" class="nav-item ${getActive('contact-us.html')}">Contact Us</a></li>
-                    
+                    <li><a href="${getPath('regional-partners.html')}" class="nav-item ${getActive('regional-partners.html')}">Partners</a></li>
                     <!-- Mobile Theme Toggle -->
                     <li class="mobile-theme-toggle-li" style="width: 100%; margin-top: 15px;">
                         <button id="mobile-theme-toggle-btn" style="background: var(--primary-light); border: 1px solid var(--border-color); color: var(--text-light); cursor: pointer; padding: 12px 20px; border-radius: 20px; font-size: 0.9rem; font-family: 'Outfit', sans-serif; font-weight: 700; display: flex; align-items: center; gap: 8px; margin: 0 auto; width: 100%; justify-content: center;" onclick="window.toggleTheme()">
@@ -133,6 +159,8 @@ function injectHeader() {
     headerPlaceholder.outerHTML = headerHTML;
 }
 
+
+
 function injectFooter() {
     const footerPlaceholder = document.getElementById("footer-placeholder");
     if (!footerPlaceholder) return;
@@ -147,12 +175,11 @@ function injectFooter() {
                 <div class="footer-col">
                     <h4 style="color: rgba(181, 139, 66, 0.8); letter-spacing: 2px; font-family: 'Outfit', sans-serif;">QUICK LINKS</h4>
                     <ul>
-
                         <li><a href="${getPath('about-us.html')}" style="font-family: 'Outfit', sans-serif;">About Us</a></li>
                         <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Contact Us</a></li>
+                        <li><a href="${getPath('claims.html')}" style="font-family: 'Outfit', sans-serif;">Claims Help</a></li>
                         <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Ask Us Anything</a></li>
-
-
+                        <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Advisor Resource Center</a></li>
                     </ul>
                 </div>
 
@@ -197,13 +224,8 @@ function injectCookieBanner() {
         <h4 style="margin-bottom: 8px; color: rgba(181, 139, 66, 0.9); font-family: 'Playfair Display', Georgia, serif;"><i class="fas fa-cookie-bite" style="color: #b58b42;"></i> Cookie Consent</h4>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px; font-family: 'Outfit', sans-serif;">We use cookies to improve your experience on our site. By using our site, you consent to cookies. Please read our Cookie Policy.</p>
         <div class="cookie-actions">
-
             <button class="btn btn-outline btn-sm" id="cookie-settings-btn" onclick="alert('Cookie Settings details (Dummy).')" style="font-family: 'Outfit', sans-serif;">Preferences</button>
             <button class="btn btn-primary btn-sm" id="cookie-accept-btn" style="background: linear-gradient(145deg, #b58b42, #d4af37); border: none; color: #0a0a0f; font-weight: 700; font-family: 'Outfit', sans-serif;">Accept All</button>
-
-           
-            <button class="btn btn-primary btn-sm" id="cookie-accept-btn">Accept All</button>
-
         </div>
     `;
 

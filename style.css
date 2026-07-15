@@ -421,6 +421,7 @@ body.light-mode .brand-tagline {
     color: #0b132b; /* Red active hover color */
 }
 
+
 /* Mega-menu products */
 .nav-links li.megamenu {
     position: static !important;
@@ -585,13 +586,47 @@ body.light-mode .brand-tagline {
     background-color: #1c2541;
 }
 
+.megamenu-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.megamenu-col ul li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
 .megamenu-col ul li a {
-    font-size: 0.9rem;
-    color: var(--text-muted);
+    font-size: 0.88rem;
+    color: #475569; /* Slate gray for high visibility on white */
+    text-decoration: none;
+    transition: color 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 2px 0;
+    background-color: transparent;
+}
+
+.megamenu-col ul li a i {
+    font-size: 0.7rem;
+    color: var(--secondary-color); /* Gold icon */
+    transition: transform 0.2s ease;
 }
 
 .megamenu-col ul li a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Gold hover text */
+    background-color: transparent;
+}
+
+.megamenu-col ul li a:hover i {
+    transform: translateX(4px); /* Hover arrow animation */
 }
 
 .hamburger {
@@ -655,7 +690,6 @@ body.light-mode .brand-tagline {
         display: block;
     }
 }
-
 /* --- Hero Banner & Gradients --- */
 .hero-banner {
     background: var(--grad-primary);

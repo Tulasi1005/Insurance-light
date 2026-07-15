@@ -294,12 +294,12 @@ header {
 
 .brand-submark {
     font-family: 'Cinzel', serif;
-    font-weight: 500;
-    font-size: 0.72rem;
+    font-weight: 700;
+    font-size: 0.82rem;
     letter-spacing: 5px;
-    color: var(--secondary-color); /* Gold in both modes */
+    color: #df8f06; /* Gold in both modes */
     line-height: 1.1;
-    margin-top: 8px;
+    margin-top: 7px;
 }
 
 .brand-divider {

@@ -269,7 +269,7 @@ header {
 }
 
 .brand-mark {
-    height: 60px;
+    height: 52px;
     width: auto;
     display: block;
     filter: drop-shadow(0 2px 8px rgba(181, 139, 66, 0.25));
@@ -304,7 +304,7 @@ header {
 
 .brand-divider {
     height: 1px;
-    background: linear-gradient(90deg, var(--secondary-color), transparent);
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent); /* Symmetrical fade */
     width: 65px;
     margin: 4px 0;
     opacity: 0.7;
@@ -420,7 +420,6 @@ body.light-mode .brand-tagline {
     background-color: #f8fafc;
     color: #0b132b; /* Red active hover color */
 }
-
 
 /* Mega-menu products */
 .nav-links li.megamenu {
@@ -690,6 +689,7 @@ body.light-mode .brand-tagline {
         display: block;
     }
 }
+
 /* --- Hero Banner & Gradients --- */
 .hero-banner {
     background: var(--grad-primary);

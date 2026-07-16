@@ -20,28 +20,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const getPath = (filename) => `./${filename}`;
 
-// Quintera Holdings Premium Branding with Transparent Logo
+// Quintera Holdings Premium Branding with Quality Lockup
 const starLogoSVG = `
 <div class="brand-lockup">
   <img class="brand-mark" src="${getPath('quintera-q-mark.png')}" alt="Quintera Holdings Q mark">
   <div class="brand-copy">
-    <span class="brand-wordmark">QUINTERA</span>
-    <span class="brand-submark">HOLDINGS</span>
-    <span class="brand-divider"></span>
+    <div class="brand-wordmark">QUINTERA</div>
+    <div class="brand-submark">HOLDINGS</div>
+    <div class="brand-divider"></div>
+    <div class="brand-tagline">VISION • INTEGRITY • IMPACT</div>
   </div>
 </div>
 `;
 
 
-// Footer Logo: Quintera Holdings with Transparent Logo
+// Footer Logo: Quintera Holdings with the same lockup format as the navbar
 const starFooterLogo1 = `
-<div style="text-align: center; padding: 20px 15px; background: linear-gradient(145deg, #111118, #1a1a2e); border-radius: 12px; border: 1px solid rgba(181, 139, 66, 0.12); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); position: relative; overflow: hidden;">
+<div class="footer-logo-shell">
   <div style="position: absolute; top: -30%; right: -20%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(181, 139, 66, 0.03) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
   <div style="position: absolute; bottom: -20%; left: -20%; width: 80px; height: 80px; background: radial-gradient(circle, rgba(212, 175, 55, 0.02) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-  
-  <img src="${getPath('logo-fin.png')}" alt="Quintera Holdings" style="height: 100px; width: auto; margin-bottom: 8px; filter: drop-shadow(0 4px 12px rgba(181, 139, 66, 0.2));">
-  
-  
+
+  <div class="brand-lockup footer-brand-lockup">
+    <img class="brand-mark" src="${getPath('quintera-q-mark.png')}" alt="Quintera Holdings Q mark">
+    <div class="brand-copy">
+      <div class="brand-wordmark">QUINTERA</div>
+      <div class="brand-submark">HOLDINGS</div>
+      <div class="brand-divider"></div>
+      <div class="brand-tagline">VISION • INTEGRITY • IMPACT</div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -150,6 +157,7 @@ function injectHeader() {
                     </li>
                     <li><a href="${getPath('contact-us.html')}" class="nav-item ${getActive('contact-us.html')}">Forms</a></li>
                     <li><a href="${getPath('contact-us.html')}" class="nav-item ${getActive('contact-us.html')}">Contact Us</a></li>
+                    
                     <!-- Mobile Theme Toggle -->
                     <li class="mobile-theme-toggle-li" style="width: 100%; margin-top: 15px;">
                         <button id="mobile-theme-toggle-btn" style="background: var(--primary-light); border: 1px solid var(--border-color); color: var(--text-light); cursor: pointer; padding: 12px 20px; border-radius: 20px; font-size: 0.9rem; font-family: 'Outfit', sans-serif; font-weight: 700; display: flex; align-items: center; gap: 8px; margin: 0 auto; width: 100%; justify-content: center;" onclick="window.toggleTheme()">

@@ -200,7 +200,7 @@ function injectFooter() {
                 <div class="footer-col">
                     <h4 style="color: rgba(181, 139, 66, 0.8); letter-spacing: 2px; font-family: 'Outfit', sans-serif;">SEARCH</h4>
                     <form class="searchform" style="position: relative; margin-bottom: 30px;">
-                        <input type="text" name="s" placeholder="Search..." style="width: 100%; padding: 10px 40px 10px 15px; border-radius: 4px; border: 1px solid rgba(181, 139, 66, 0.15); background-color: #f8fafc; color: var(--primary-color); outline: none; transition: border-color 0.3s ease; font-family: 'Outfit', sans-serif;">
+                        <input type="text" name="s" placeholder="Search..." style="width: 100%; padding: 10px 40px 10px 15px; border-radius: 4px; border: 1px solid rgba(181, 139, 66, 0.15); background-color: #f8fafc; color: var(--text-dark); outline: none; transition: border-color 0.3s ease; font-family: 'Outfit', sans-serif;">
                         <button type="submit" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #b58b42; cursor: pointer; transition: color 0.3s ease;"><i class="fas fa-search"></i></button>
                     </form>
                     
@@ -798,14 +798,44 @@ function setupFooterSearch() {
     const searchForm = document.querySelector(".searchform");
     if (!searchForm) return;
 
+    const searchInput = searchForm.querySelector("input[name='s']");
+    if (!searchInput) return;
+
+    const minQueryLength = 3;
+
+    const runSearch = () => {
+        const query = searchInput.value.trim().toLowerCase();
+
+        if (query.length < minQueryLength) {
+            const existingOverlay = document.querySelector(".success-overlay");
+            if (existingOverlay) {
+                existingOverlay.remove();
+            }
+            return;
+        }
+
+        showSearchResults(query);
+    };
+
+    searchInput.addEventListener("focus", () => {
+        const existingOverlay = document.querySelector(".success-overlay");
+        if (existingOverlay) {
+            existingOverlay.remove();
+        }
+    });
+    searchInput.addEventListener("input", runSearch);
+
     searchForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        const query = searchForm.querySelector("input[name='s']").value.trim().toLowerCase();
-        if (!query) return;
-        showSearchResults(query);
+        runSearch();
     });
 
     async function showSearchResults(query) {
+        const existingOverlay = document.querySelector(".success-overlay");
+        if (existingOverlay) {
+            existingOverlay.remove();
+        }
+
         // Show a temporary loading cursor or state if desired, but search is extremely fast
         const database = [
             { title: "Home Page", url: "index.html" },
@@ -878,7 +908,7 @@ function setupFooterSearch() {
                 resultsHTML += `
                     <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 12px;">
                         <h4 style="margin-bottom: 4px; font-family: 'Playfair Display', Georgia, serif;"><a href="${getPath(res.url)}" style="color: #b58b42; font-weight: 700; text-decoration: none; font-size: 1.1rem;">${res.title}</a></h4>
-                        <p style="color: #64748b; font-size: 0.875rem; margin: 0; line-height: 1.4; font-family: 'Outfit', sans-serif;">${res.desc}</p>
+                        <p style="color: #ffffff; font-size: 0.875rem; margin: 0; line-height: 1.4; font-family: 'Outfit', sans-serif;">${res.desc}</p>
                     </div>
                 `;
             });
@@ -886,15 +916,15 @@ function setupFooterSearch() {
         } else {
             resultsHTML = `
                 <div style="text-align: center; margin-bottom: 24px; padding: 20px 0;">
-                    <i class="fas fa-search-minus" style="font-size: 3rem; color: #94a3b8; margin-bottom: 16px;"></i>
-                    <p style="color: #64748b; margin: 0; font-family: 'Outfit', sans-serif;">No search results match your query: "<strong style="font-family: 'Playfair Display', Georgia, serif;">${query}</strong>". Please try again.</p>
+                    <i class="fas fa-search-minus" style="font-size: 3rem; color: #ffffff; margin-bottom: 16px;"></i>
+                    <p style="color: #ffffff; margin: 0; font-family: 'Outfit', sans-serif;">No search results match your query: "<strong style="font-family: 'Playfair Display', Georgia, serif;">${query}</strong>". Please try again.</p>
                 </div>
             `;
         }
 
         overlay.innerHTML = `
             <div class="success-box" style="text-align: left; max-width: 600px; width: 90%; max-height: 80vh; display: flex; flex-direction: column; border-top: 3px solid #b58b42;">
-                <h2 style="margin-bottom: 8px; color: var(--primary-color); font-family: 'Playfair Display', Georgia, serif;">Search Results</h2>
+                <h2 style="margin-bottom: 8px; color: var(--text-light); font-family: 'Playfair Display', Georgia, serif;">Search Results</h2>
                 <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; font-family: 'Outfit', sans-serif;">Found ${results.length} page(s) containing "<strong style="color: #b58b42; font-family: 'Playfair Display', Georgia, serif;">${query}</strong>":</p>
                 
                 <div style="flex-grow: 1; overflow-y: auto; padding-right: 8px; margin-bottom: 16px;">
@@ -908,10 +938,13 @@ function setupFooterSearch() {
         document.body.appendChild(overlay);
         setTimeout(() => overlay.classList.add("active"), 50);
 
-        document.getElementById("search-close-btn").addEventListener("click", () => {
-            overlay.classList.remove("active");
-            setTimeout(() => overlay.remove(), 300);
-        });
+        const closeButton = overlay.querySelector("#search-close-btn");
+        if (closeButton) {
+            closeButton.addEventListener("click", () => {
+                overlay.classList.remove("active");
+                setTimeout(() => overlay.remove(), 300);
+            });
+        }
     }
 }
 

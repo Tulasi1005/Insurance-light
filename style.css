@@ -26,7 +26,7 @@
     /* Gradients */
     --grad-primary: linear-gradient(135deg, #0B1B2B 0%, #13283F 100%);
     --grad-gold: linear-gradient(135deg, #d4b470 0%, #B58B42 100%);
-    --grad-glass: rgba(26, 62, 99, 0.85);
+    --grad-glass: rgb(15 66 119 / 85%);   
     
     /* Layout & Shadows */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -269,25 +269,25 @@ header {
 }
 
 .brand-mark {
-    height: 52px;
+    height: 54px;
     width: auto;
     display: block;
+    flex-shrink: 0;
     filter: drop-shadow(0 2px 8px rgba(181, 139, 66, 0.25));
 }
 
 .brand-copy {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally inside flex column */
+    align-items: center;
     text-align: center;
 }
-
 
 .brand-wordmark {
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    font-size: 2.0rem;
-    letter-spacing: 2px;
+    font-size: 1.15rem;
+    letter-spacing: 1.6px;
     color: #ededf0; /* Gray/Silver in dark mode */
     line-height: 0.95;
     margin: 0;
@@ -296,11 +296,11 @@ header {
 .brand-submark {
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    font-size: 0.82rem;
-    letter-spacing: 5px;
+    font-size: 0.62rem;
+    letter-spacing: 4px;
     color: #df8f06; /* Gold in both modes */
     line-height: 1.1;
-    margin-top: 7px;
+    margin-top: 5px;
 }
 
 .brand-divider {
@@ -327,6 +327,21 @@ body.light-mode .brand-wordmark {
 
 body.light-mode .brand-tagline {
     color: #0B1B2B; /* Navy in light mode */
+}
+
+.footer-logo-shell {
+    text-align: center;
+    padding: 20px 15px;
+    background: linear-gradient(145deg, var(--primary-color), var(--primary-light));
+    border-radius: 12px;
+    border: 1px solid rgba(181, 139, 66, 0.12);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-brand-lockup {
+    justify-content: center;
 }
 
 .nav-links {
@@ -524,6 +539,16 @@ body.light-mode .brand-tagline {
     margin-bottom: 14px;
 }
 
+.megamenu-col ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.megamenu-col ul li::marker {
+    content: "";
+}
+
 .megamenu-more {
     color: #0b132b;
     font-family: 'Outfit', sans-serif;
@@ -586,47 +611,13 @@ body.light-mode .brand-tagline {
     background-color: #1c2541;
 }
 
-.megamenu-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 14px 0 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.megamenu-col ul li {
-    display: block;
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
 .megamenu-col ul li a {
-    font-size: 0.88rem;
-    color: #475569; /* Slate gray for high visibility on white */
-    text-decoration: none;
-    transition: color 0.25s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 2px 0;
-    background-color: transparent;
-}
-
-.megamenu-col ul li a i {
-    font-size: 0.7rem;
-    color: var(--secondary-color); /* Gold icon */
-    transition: transform 0.2s ease;
+    font-size: 0.9rem;
+    color:black;
 }
 
 .megamenu-col ul li a:hover {
-    color: var(--secondary-color); /* Gold hover text */
-    background-color: transparent;
-}
-
-.megamenu-col ul li a:hover i {
-    transform: translateX(4px); /* Hover arrow animation */
+    color: var(--secondary-color);
 }
 
 .hamburger {
@@ -1802,3 +1793,4 @@ footer {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+

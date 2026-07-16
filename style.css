@@ -1718,7 +1718,7 @@ footer {
 
 .chat-msg-option-btn:hover {
     background-color: var(--secondary-color);
-    color: white;
+    color: white !important;
 }
 
 .chat-footer {
